@@ -98,7 +98,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+@import "components/block-section";
+@import "components/colophon";
 @import "components/masthead";
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+@import "sections/welcome";
+@import "sections/menu";
 
 /*--------------------------------------------------------------
 # Infinite scroll

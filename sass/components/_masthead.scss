@@ -1,3 +1,39 @@
 #masthead {
-    background-color: red;
+    background-color: mediumpurple;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+
+    .site-branding {
+
+        .custom-logo-link {
+            padding: 0.5rem;
+
+            .custom-logo {
+                max-height: 40px;
+                width: auto;
+            }
+        }
+    }
+
+    .main-navigation {
+        height: 100%;
+
+        .menu-primary-container {
+            height: 100%;
+        }
+
+        .menu {
+            height: 100%;
+
+            .menu-item {
+                height: 100%;
+                a {
+                    color: white;
+                    padding: 0 0.5rem;
+                }
+            }
+        }
+    }
 }

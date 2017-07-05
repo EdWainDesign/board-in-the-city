@@ -7,6 +7,8 @@
  * @package BITC
  */
 
+require_once('functions/functions/the-page-content.php');
+
 if ( ! function_exists( 'bitc_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.

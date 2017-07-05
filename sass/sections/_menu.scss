@@ -1,0 +1,32 @@
+.block-section.menu {
+
+    h2 {
+        display: inline-block;
+    }
+
+    h2 + p {
+        display: inline-block;
+        margin-left: 0.5rem;
+        opacity: 0.5;
+    }
+
+    .tablepress.menu {
+        width: 50%;
+
+        tbody td {
+            border-top: none;
+        }
+
+        tbody tr td:first-of-type {
+            padding-left: 0;
+            width: 60%;
+        }
+
+        tbody tr td:last-of-type {
+            color: $color__primary;
+            font-weight: 700;
+            padding-right: 0;
+            text-align: right;
+        }
+    }
+}

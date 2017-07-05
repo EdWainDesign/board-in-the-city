@@ -1,0 +1,27 @@
+{
+  "name": "bitc",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass --watch sass/style.scss:style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdWainDesign/board-in-the-city.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdWainDesign/board-in-the-city/issues"
+  },
+  "homepage": "https://github.com/EdWainDesign/board-in-the-city#readme"
+}
