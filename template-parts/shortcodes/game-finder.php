@@ -24,7 +24,12 @@
     <div class="active-game-container">
         <div class="active-game">
             <h2 class="active-game-title">Game Finder</h2>
-            <p class="active-game-description">Find out more about a game by selecting it on the left.</p>
+            <div class="active-game-meta">
+                <span class="active-game-rating"></span>
+                <span class="active-game-players"></span>
+            </div>
+            <div class="active-game-image"></div>
+            <p class="active-game-content">Find out more about a game by selecting it on the left.</p>
         </div>
     </div>
 </div>

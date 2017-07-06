@@ -1,0 +1,31 @@
+#opening_times {
+    background-color: rgba(0,0,0,0.1);
+    padding: 1rem;
+    width: 20%; min-width: 320px;
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0 0 1rem;
+        text-align: center;
+    }
+
+    .op-table {
+        .op-cell-heading { text-align: left; }
+        .op-cell-periods { text-align: right; }
+    }
+
+    .op-overview-shortcode + .op-is-open-shortcode {
+        text-align: center;
+
+        .op-open, .op-closed {
+            font-weight: 700;
+        }
+
+        .op-next-period {
+            color: rgba(0,0,0,0.75);
+            font-size: 75%;
+        }
+    }
+
+    // span.op-open   { color: limegreen; }
+    // span.op-closed { color: red; }
+}

@@ -689,7 +689,8 @@ a {
       color: #404040;
       height: 100%;
       overflow-y: scroll;
-      padding: 1rem 2rem; }
+      padding: 1rem 2rem;
+      position: relative; }
       #game_finder .active-game-container .active-game::-webkit-scrollbar-track {
         background-color: transparent; }
       #game_finder .active-game-container .active-game::-webkit-scrollbar {
@@ -697,8 +698,43 @@ a {
         width: 0.5rem; }
       #game_finder .active-game-container .active-game::-webkit-scrollbar-thumb {
         background-color: #ffea3a; }
+      #game_finder .active-game-container .active-game.loading::before {
+        background-color: inherit;
+        content: 'Loading...';
+        padding-top: 4rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center; }
       #game_finder .active-game-container .active-game .active-game-title {
-        margin: 0; }
+        font-weight: 700;
+        letter-spacing: -2px;
+        margin: 0 0 1rem; }
+      #game_finder .active-game-container .active-game.active .active-game-meta {
+        color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        font-size: 75%;
+        font-weight: 500;
+        margin-bottom: 1rem; }
+        #game_finder .active-game-container .active-game.active .active-game-meta .active-game-rating,
+        #game_finder .active-game-container .active-game.active .active-game-meta .active-game-players {
+          background-color: rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          padding: 0.25rem 0.5rem; }
+        #game_finder .active-game-container .active-game.active .active-game-meta .active-game-rating {
+          margin-right: 0.5rem; }
+          #game_finder .active-game-container .active-game.active .active-game-meta .active-game-rating::before {
+            content: 'Age:';
+            margin-right: 0.25rem; }
+        #game_finder .active-game-container .active-game.active .active-game-meta .active-game-players::before {
+          content: '\f0c0';
+          font-family: 'FontAwesome';
+          margin-right: 0.25rem; }
+      #game_finder .active-game-container .active-game .active-game-image img {
+        max-height: 200px;
+        width: auto; }
 
 #masthead {
   background-color: #6639b6;
@@ -722,6 +758,26 @@ a {
         #masthead .main-navigation .menu .menu-item a {
           color: white;
           padding: 0 0.5rem; }
+
+#opening_times {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 20%;
+  min-width: 320px; }
+  #opening_times h1, #opening_times h2, #opening_times h3, #opening_times h4, #opening_times h5, #opening_times h6 {
+    margin: 0 0 1rem;
+    text-align: center; }
+  #opening_times .op-table .op-cell-heading {
+    text-align: left; }
+  #opening_times .op-table .op-cell-periods {
+    text-align: right; }
+  #opening_times .op-overview-shortcode + .op-is-open-shortcode {
+    text-align: center; }
+    #opening_times .op-overview-shortcode + .op-is-open-shortcode .op-open, #opening_times .op-overview-shortcode + .op-is-open-shortcode .op-closed {
+      font-weight: 700; }
+    #opening_times .op-overview-shortcode + .op-is-open-shortcode .op-next-period {
+      color: rgba(0, 0, 0, 0.75);
+      font-size: 75%; }
 
 /*--------------------------------------------------------------
 # Sections

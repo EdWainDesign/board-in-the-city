@@ -51,12 +51,61 @@
             height: 100%;
             overflow-y: scroll;
             padding: 1rem 2rem;
+            position: relative;
             &::-webkit-scrollbar-track { background-color: transparent; }
             &::-webkit-scrollbar {       background-color: transparent; width: 0.5rem; }
             &::-webkit-scrollbar-thumb { background-color: $color__secondary; }
 
+            &.loading {
+                &::before {
+                    background-color: inherit;
+                    content: 'Loading...';
+                    padding-top: 4rem;
+                    position: absolute;
+                        top: 0; right: 0; bottom: 0; left: 0;
+                    text-align: center;
+                }
+            }
+
             .active-game-title {
-                margin: 0;
+                font-weight: 700;
+                letter-spacing: -2px;
+                margin: 0 0 1rem;
+            }
+
+            &.active .active-game-meta {
+                color: rgba(0,0,0,0.5);
+                display: flex;
+                font-size: 75%;
+                font-weight: 500;
+                margin-bottom: 1rem;
+
+                .active-game-rating,
+                .active-game-players {
+                    background-color: rgba(0,0,0,0.1);
+                    border-radius: 4px;
+                    padding: 0.25rem 0.5rem;
+                }
+
+                .active-game-rating {
+                    margin-right: 0.5rem;
+                    &::before {
+                        content: 'Age:';
+                        margin-right: 0.25rem;
+                    }
+                }
+                .active-game-players {
+                    &::before {
+                        content: '\f0c0';
+                        font-family: 'FontAwesome';
+                        margin-right: 0.25rem;
+                    }
+                }
+            }
+
+            .active-game-image img {
+                max-height: 200px;
+                width: auto;
             }
         }
     }
