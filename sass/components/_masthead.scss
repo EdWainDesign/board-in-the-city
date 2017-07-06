@@ -3,9 +3,11 @@
     display: flex;
     align-items: center;
     position: sticky;
-    top: 0;
+        top: 0;
+    z-index: 990;
 
     .site-branding {
+        margin-right: 1rem;
 
         .custom-logo-link {
             padding: 0.5rem;
@@ -31,7 +33,11 @@
                 height: 100%;
                 a {
                     color: white;
+                    font-size: 90%;
+                    font-weight: 700;
+                    letter-spacing: -1px;
                     padding: 0 0.5rem;
+                    text-transform: uppercase;
                 }
             }
         }

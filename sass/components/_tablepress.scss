@@ -1,0 +1,19 @@
+.tablepress {
+
+    thead tr th {
+        background-color: transparent;
+        border-bottom: none;
+        padding: 0 0 1rem;
+    }
+
+    tbody.row-hover tr:hover td {
+        background-color: rgba(0,0,0,0.05);
+        cursor: pointer;
+    }
+
+
+    tr.odd td  { background-color: rgba(0,0,0,0.05); }
+    tr.even td { background-color: transparent; }
+    thead + tbody tr.odd td  { background-color: transparent; }
+    thead + tbody tr.even td { background-color: rgba(0,0,0,0.05); }
+}

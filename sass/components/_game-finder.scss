@@ -3,10 +3,9 @@
         align-items: stretch;
     height: 400px;
     margin-top: 2rem;
-    padding: 1rem;
 
     .game-list-container {
-        padding: 1rem;
+        padding: 1rem 1rem 1rem 0;
         width: 40%;
 
         input {
@@ -42,7 +41,7 @@
     }
 
     .active-game-container {
-        padding: 1rem;
+        padding: 1rem 0 1rem 1rem;
         width: 60%;
 
         .active-game {
@@ -71,6 +70,7 @@
                 font-weight: 700;
                 letter-spacing: -2px;
                 margin: 0 0 1rem;
+                text-transform: uppercase;
             }
 
             &.active .active-game-meta {

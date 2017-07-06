@@ -1,5 +1,8 @@
 <section id="menu" class="block-section menu">
     <article>
-        <?= the_page_content('menu') ?>
+        <?php
+            $id = get_page_id_by_slug('menu');
+            echo \Elementor\Plugin::$instance->frontend->get_builder_content( $id );
+        ?>
     </article>
 </section>

@@ -26,6 +26,6 @@
         }
     }
 
-    // span.op-open   { color: limegreen; }
-    // span.op-closed { color: red; }
+    span.op-open   { color: $color__success; }
+    span.op-closed { color: $color__error; }
 }

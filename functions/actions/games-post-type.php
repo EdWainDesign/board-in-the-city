@@ -6,7 +6,7 @@ function create_game_post_type() {
 
     register_taxonomy(
         'players',
-        'games',
+        'game',
         array(
             'label' => __( 'Players' ),
             'rewrite' => array( 'slug' => 'players' ),
@@ -16,7 +16,7 @@ function create_game_post_type() {
 
     register_taxonomy(
         'rating',
-        'games',
+        'game',
         array(
             'label' => __( 'Rating' ),
             'rewrite' => array( 'slug' => 'rating' ),
@@ -24,7 +24,7 @@ function create_game_post_type() {
         )
     );
 
-    register_post_type( 'games', array(
+    register_post_type( 'game', array(
         'labels' => array(
             'name' => __( 'Games' ),
             'singular_name' => __( 'Game' )

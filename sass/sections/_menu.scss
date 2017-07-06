@@ -11,21 +11,33 @@
     }
 
     .tablepress.menu {
-        width: 50%;
+
+        thead tr {
+            th:first-of-type {
+                color: $color__primary;
+                font-size: 150%;
+                letter-spacing: -2px;
+                text-transform: uppercase;
+            }
+
+            th:last-of-type {
+                color: rgba(0,0,0,0.5);
+                font-weight: 300;
+                text-align: right;
+            }
+        }
 
         tbody td {
             border-top: none;
         }
 
         tbody tr td:first-of-type {
-            padding-left: 0;
-            width: 60%;
+            width: 70%;
         }
 
         tbody tr td:last-of-type {
             color: $color__primary;
             font-weight: 700;
-            padding-right: 0;
             text-align: right;
         }
     }

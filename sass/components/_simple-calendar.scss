@@ -1,0 +1,39 @@
+.simcal-calendar-grid {
+
+    .simcal-calendar-head {
+        background-color: $color__primary;
+        color: $color__background-body;
+
+        .simcal-nav {
+            .simcal-prev-wrapper {}
+            .simcal-current {}
+            .simcal-next-wrapper {}
+            .simcal-nav-button {
+                color: inherit;
+                &[disabled="disabled"] {
+                    opacity: 0.2;
+                }
+            }
+        }
+    }
+
+    .simcal-month {
+        .simcal-week {
+
+            td div {
+                background-color: $color__background-body;
+                border: none!important;
+                max-height: 120px!important;
+                min-height: 120px!important;
+            }
+
+            .simcal-today {
+                background-color: rgba(0,0,0,0.1);
+                background-color: $color__primary;
+                .simcal-day-label {
+                    background-color: $color__primary!important;
+                }
+            }
+        }
+    }
+}

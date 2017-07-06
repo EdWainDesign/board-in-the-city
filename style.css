@@ -287,7 +287,8 @@ html {
 
 body {
   background: #fff;
-  /* Fallback for when there is no custom background color defined. */ }
+  /* Fallback for when there is no custom background color defined. */
+  font-family: 'Open Sans', 'Verdana', sans-serif; }
 
 blockquote, q {
   quotes: "" ""; }
@@ -649,10 +650,9 @@ a {
   display: flex;
   align-items: stretch;
   height: 400px;
-  margin-top: 2rem;
-  padding: 1rem; }
+  margin-top: 2rem; }
   #game_finder .game-list-container {
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 0;
     width: 40%; }
     #game_finder .game-list-container input {
       border: none;
@@ -682,7 +682,7 @@ a {
         #game_finder .game-list-container .game-list .game:hover {
           background-color: rgba(0, 0, 0, 0.1); }
   #game_finder .active-game-container {
-    padding: 1rem;
+    padding: 1rem 0 1rem 1rem;
     width: 60%; }
     #game_finder .active-game-container .active-game {
       background-color: #fff;
@@ -711,7 +711,8 @@ a {
       #game_finder .active-game-container .active-game .active-game-title {
         font-weight: 700;
         letter-spacing: -2px;
-        margin: 0 0 1rem; }
+        margin: 0 0 1rem;
+        text-transform: uppercase; }
       #game_finder .active-game-container .active-game.active .active-game-meta {
         color: rgba(0, 0, 0, 0.5);
         display: flex;
@@ -741,12 +742,15 @@ a {
   display: flex;
   align-items: center;
   position: sticky;
-  top: 0; }
-  #masthead .site-branding .custom-logo-link {
-    padding: 0.5rem; }
-    #masthead .site-branding .custom-logo-link .custom-logo {
-      max-height: 40px;
-      width: auto; }
+  top: 0;
+  z-index: 990; }
+  #masthead .site-branding {
+    margin-right: 1rem; }
+    #masthead .site-branding .custom-logo-link {
+      padding: 0.5rem; }
+      #masthead .site-branding .custom-logo-link .custom-logo {
+        max-height: 40px;
+        width: auto; }
   #masthead .main-navigation {
     height: 100%; }
     #masthead .main-navigation .menu-primary-container {
@@ -757,7 +761,11 @@ a {
         height: 100%; }
         #masthead .main-navigation .menu .menu-item a {
           color: white;
-          padding: 0 0.5rem; }
+          font-size: 90%;
+          font-weight: 700;
+          letter-spacing: -1px;
+          padding: 0 0.5rem;
+          text-transform: uppercase; }
 
 #opening_times {
   background-color: rgba(0, 0, 0, 0.1);
@@ -778,16 +786,61 @@ a {
     #opening_times .op-overview-shortcode + .op-is-open-shortcode .op-next-period {
       color: rgba(0, 0, 0, 0.75);
       font-size: 75%; }
+  #opening_times span.op-open {
+    color: #00C853; }
+  #opening_times span.op-closed {
+    color: #F44336; }
+
+.simcal-calendar-grid .simcal-calendar-head {
+  background-color: #6639b6;
+  color: #fff; }
+  .simcal-calendar-grid .simcal-calendar-head .simcal-nav .simcal-nav-button {
+    color: inherit; }
+    .simcal-calendar-grid .simcal-calendar-head .simcal-nav .simcal-nav-button[disabled="disabled"] {
+      opacity: 0.2; }
+.simcal-calendar-grid .simcal-month .simcal-week td div {
+  background-color: #fff;
+  border: none !important;
+  max-height: 120px !important;
+  min-height: 120px !important; }
+.simcal-calendar-grid .simcal-month .simcal-week .simcal-today {
+  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #6639b6; }
+  .simcal-calendar-grid .simcal-month .simcal-week .simcal-today .simcal-day-label {
+    background-color: #6639b6 !important; }
+
+.tablepress thead tr th {
+  background-color: transparent;
+  border-bottom: none;
+  padding: 0 0 1rem; }
+.tablepress tbody.row-hover tr:hover td {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer; }
+.tablepress tr.odd td {
+  background-color: rgba(0, 0, 0, 0.05); }
+.tablepress tr.even td {
+  background-color: transparent; }
+.tablepress thead + tbody tr.odd td {
+  background-color: transparent; }
+.tablepress thead + tbody tr.even td {
+  background-color: rgba(0, 0, 0, 0.05); }
 
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
-.block-section.welcome img {
-  margin-right: 4rem;
-  max-height: 160px !important;
-  width: auto; }
-.block-section.welcome strong {
-  color: #ffea3a; }
+.block-section.welcome {
+  display: flex;
+  align-items: center;
+  font-size: 125%;
+  font-weight: 200;
+  height: 60vh; }
+  .block-section.welcome img {
+    margin-right: 4rem;
+    max-height: 256px !important;
+    width: auto; }
+  .block-section.welcome strong {
+    color: #ffea3a;
+    font-weight: 600; }
 
 .block-section.menu h2 {
   display: inline-block; }
@@ -795,18 +848,23 @@ a {
   display: inline-block;
   margin-left: 0.5rem;
   opacity: 0.5; }
-.block-section.menu .tablepress.menu {
-  width: 50%; }
-  .block-section.menu .tablepress.menu tbody td {
-    border-top: none; }
-  .block-section.menu .tablepress.menu tbody tr td:first-of-type {
-    padding-left: 0;
-    width: 60%; }
-  .block-section.menu .tablepress.menu tbody tr td:last-of-type {
-    color: #6639b6;
-    font-weight: 700;
-    padding-right: 0;
-    text-align: right; }
+.block-section.menu .tablepress.menu thead tr th:first-of-type {
+  color: #6639b6;
+  font-size: 150%;
+  letter-spacing: -2px;
+  text-transform: uppercase; }
+.block-section.menu .tablepress.menu thead tr th:last-of-type {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+  text-align: right; }
+.block-section.menu .tablepress.menu tbody td {
+  border-top: none; }
+.block-section.menu .tablepress.menu tbody tr td:first-of-type {
+  width: 70%; }
+.block-section.menu .tablepress.menu tbody tr td:last-of-type {
+  color: #6639b6;
+  font-weight: 700;
+  text-align: right; }
 
 .block-section.bookings a {
   color: #6639b6;

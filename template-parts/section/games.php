@@ -1,5 +1,8 @@
 <section id="games" class="block-section games">
     <article>
-        <?= the_page_content('games') ?>
+        <?php
+            $id = get_page_id_by_slug('games');
+            echo \Elementor\Plugin::$instance->frontend->get_builder_content( $id );
+        ?>
     </article>
 </section>

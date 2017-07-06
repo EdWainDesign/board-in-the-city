@@ -1,10 +1,17 @@
 .block-section.welcome {
+    display: flex;
+        align-items: center;
+    font-size: 125%;
+    font-weight: 200;
+    height: 60vh;
+
     img {
         margin-right: 4rem;
-        max-height: 160px!important;
+        max-height: 256px!important;
         width: auto;
     }
     strong {
         color: $color__secondary;
+        font-weight: 600;
     }
 }
