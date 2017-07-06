@@ -645,8 +645,63 @@ a {
   left: 0;
   width: 100%; }
 
+#game_finder {
+  display: flex;
+  align-items: stretch;
+  height: 400px;
+  margin-top: 2rem;
+  padding: 1rem; }
+  #game_finder .game-list-container {
+    padding: 1rem;
+    width: 40%; }
+    #game_finder .game-list-container input {
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 0;
+      height: 40px;
+      padding: 0.5rem 1rem;
+      width: 100%; }
+    #game_finder .game-list-container .game-list {
+      background-color: #fff;
+      list-style-type: none;
+      height: calc(100% - 40px);
+      margin: 0;
+      padding: 0;
+      overflow-y: scroll; }
+      #game_finder .game-list-container .game-list::-webkit-scrollbar-track {
+        background-color: transparent; }
+      #game_finder .game-list-container .game-list::-webkit-scrollbar {
+        background-color: transparent;
+        width: 0.5rem; }
+      #game_finder .game-list-container .game-list::-webkit-scrollbar-thumb {
+        background-color: #ffea3a; }
+      #game_finder .game-list-container .game-list .game {
+        color: #404040;
+        cursor: pointer;
+        padding: 0.5rem 1rem; }
+        #game_finder .game-list-container .game-list .game:hover {
+          background-color: rgba(0, 0, 0, 0.1); }
+  #game_finder .active-game-container {
+    padding: 1rem;
+    width: 60%; }
+    #game_finder .active-game-container .active-game {
+      background-color: #fff;
+      color: #404040;
+      height: 100%;
+      overflow-y: scroll;
+      padding: 1rem 2rem; }
+      #game_finder .active-game-container .active-game::-webkit-scrollbar-track {
+        background-color: transparent; }
+      #game_finder .active-game-container .active-game::-webkit-scrollbar {
+        background-color: transparent;
+        width: 0.5rem; }
+      #game_finder .active-game-container .active-game::-webkit-scrollbar-thumb {
+        background-color: #ffea3a; }
+      #game_finder .active-game-container .active-game .active-game-title {
+        margin: 0; }
+
 #masthead {
-  background-color: mediumpurple;
+  background-color: #6639b6;
   display: flex;
   align-items: center;
   position: sticky;
@@ -696,6 +751,14 @@ a {
     font-weight: 700;
     padding-right: 0;
     text-align: right; }
+
+.block-section.bookings a {
+  color: #6639b6;
+  text-decoration: none; }
+  .block-section.bookings a strong {
+    font-size: 200%;
+    font-weight: 700;
+    letter-spacing: -1px; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

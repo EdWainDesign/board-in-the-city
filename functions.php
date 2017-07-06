@@ -7,7 +7,9 @@
  * @package BITC
  */
 
+require_once('functions/actions/games-post-type.php');
 require_once('functions/functions/the-page-content.php');
+require_once('functions/shortcodes/game-finder.php');
 
 if ( ! function_exists( 'bitc_setup' ) ) :
 /**

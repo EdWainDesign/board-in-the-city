@@ -100,6 +100,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "components/block-section";
 @import "components/colophon";
+@import "components/game-finder";
 @import "components/masthead";
 
 /*--------------------------------------------------------------
@@ -107,6 +108,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "sections/welcome";
 @import "sections/menu";
+@import "sections/bookings";
 
 /*--------------------------------------------------------------
 # Infinite scroll
