@@ -1,0 +1,100 @@
+.wpcf7 {
+    form.wpcf7-form {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -0.5rem;
+
+        [class*="col"] {
+            display: inline-block;
+            margin: 0.25rem;
+        }
+
+        .col-6,
+        .wpcf7-form-control-wrap.col-6  { width: calc( (100% / 12 * 6) - 0.5rem ); }
+        .col-12,
+        .wpcf7-form-control-wrap.col-12 { width: calc( (100% / 12 * 12) - 0.5rem ); }
+
+        .wpcf7-form-control-wrap {
+            display: block;
+            width: 100%;
+
+            input,
+            textarea {
+                border: none;
+                border-radius: 0;
+                display: block;
+                font-family: 'Open Sans', 'Verdana', sans-serif;
+                font-weight: 300;
+                padding: 0.5rem;
+                min-height: 48px;
+                width: 100%;
+            }
+        }
+
+        .wpcf7-checkbox {
+            display: block;
+            position: relative;
+            width: 100%;
+
+            input {
+                cursor: pointer;
+                height: 48px;
+                width: 48px; min-width: 48px;
+                visibility: hidden;
+            }
+
+            .wpcf7-list-item-label {
+                color: rgba(0,0,0,0.75);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                line-height: 20px;
+                padding-left: calc(48px + 0.5rem);
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0;
+
+                &::before {
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    font-family: 'Material-Design-Iconic-Font';
+                    font-size: 200%;
+                    height: 48px;
+                    width: 48px;
+                    position: absolute;
+                    top: 0; left: 0;
+                }
+            }
+
+            input:checked + .wpcf7-list-item-label::before {
+                content: '\f26a';
+            }
+
+            input:not(:checked) + .wpcf7-list-item-label::before {
+                content: '\f279';
+            }
+        }
+
+        span.wpcf7-list-item {
+            display: block;
+            margin: 0;
+        }
+
+        .wpcf7-submit {
+            background-color: rgba(0,0,0,0.9);
+            border: none;
+            border-radius: 0;
+            color: $color__background-body;
+            font-family: 'Open Sans', 'Verdana', sans-serif;
+            font-size: 100%;
+            font-weight: 700;
+            letter-spacing: -1px;
+            min-height: 48px;
+            margin: 0.25rem auto;
+            text-transform: uppercase;
+            transition: background-color 0.25s;
+            width: calc(100% - 0.5rem);
+            &:hover { background-color: $color__primary; }
+        }
+    }
+}

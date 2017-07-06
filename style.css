@@ -646,6 +646,114 @@ a {
   left: 0;
   width: 100%; }
 
+#contact_card {
+  background-color: rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  width: 20%;
+  min-width: 320px; }
+  #contact_card h1, #contact_card h2, #contact_card h3, #contact_card h4, #contact_card h5, #contact_card h6 {
+    margin: 0 0 1rem;
+    text-align: center; }
+  #contact_card .op-table .op-cell-heading {
+    text-align: left; }
+  #contact_card .op-table .op-cell-periods {
+    text-align: right; }
+  #contact_card .op-overview-shortcode + .op-is-open-shortcode {
+    text-align: center; }
+    #contact_card .op-overview-shortcode + .op-is-open-shortcode .op-open, #contact_card .op-overview-shortcode + .op-is-open-shortcode .op-closed {
+      font-weight: 700; }
+    #contact_card .op-overview-shortcode + .op-is-open-shortcode .op-next-period {
+      color: rgba(0, 0, 0, 0.75);
+      font-size: 75%; }
+  #contact_card span.op-open {
+    color: #00C853; }
+  #contact_card span.op-closed {
+    color: #F44336; }
+
+.wpcf7 form.wpcf7-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem; }
+  .wpcf7 form.wpcf7-form [class*="col"] {
+    display: inline-block;
+    margin: 0.25rem; }
+  .wpcf7 form.wpcf7-form .col-6,
+  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.col-6 {
+    width: calc( (100% / 12 * 6) - 0.5rem ); }
+  .wpcf7 form.wpcf7-form .col-12,
+  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.col-12 {
+    width: calc( (100% / 12 * 12) - 0.5rem ); }
+  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap {
+    display: block;
+    width: 100%; }
+    .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap input,
+    .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap textarea {
+      border: none;
+      border-radius: 0;
+      display: block;
+      font-family: 'Open Sans', 'Verdana', sans-serif;
+      font-weight: 300;
+      padding: 0.5rem;
+      min-height: 48px;
+      width: 100%; }
+  .wpcf7 form.wpcf7-form .wpcf7-checkbox {
+    display: block;
+    position: relative;
+    width: 100%; }
+    .wpcf7 form.wpcf7-form .wpcf7-checkbox input {
+      cursor: pointer;
+      height: 48px;
+      width: 48px;
+      min-width: 48px;
+      visibility: hidden; }
+    .wpcf7 form.wpcf7-form .wpcf7-checkbox .wpcf7-list-item-label {
+      color: rgba(0, 0, 0, 0.75);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      line-height: 20px;
+      padding-left: calc(48px + 0.5rem);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+      .wpcf7 form.wpcf7-form .wpcf7-checkbox .wpcf7-list-item-label::before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Material-Design-Iconic-Font';
+        font-size: 200%;
+        height: 48px;
+        width: 48px;
+        position: absolute;
+        top: 0;
+        left: 0; }
+    .wpcf7 form.wpcf7-form .wpcf7-checkbox input:checked + .wpcf7-list-item-label::before {
+      content: '\f26a'; }
+    .wpcf7 form.wpcf7-form .wpcf7-checkbox input:not(:checked) + .wpcf7-list-item-label::before {
+      content: '\f279'; }
+  .wpcf7 form.wpcf7-form span.wpcf7-list-item {
+    display: block;
+    margin: 0; }
+  .wpcf7 form.wpcf7-form .wpcf7-submit {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    font-family: 'Open Sans', 'Verdana', sans-serif;
+    font-size: 100%;
+    font-weight: 700;
+    letter-spacing: -1px;
+    min-height: 48px;
+    margin: 0.25rem auto;
+    text-transform: uppercase;
+    transition: background-color 0.25s;
+    width: calc(100% - 0.5rem); }
+    .wpcf7 form.wpcf7-form .wpcf7-submit:hover {
+      background-color: #6639b6; }
+
 #game_finder {
   display: flex;
   align-items: stretch;
@@ -768,8 +876,9 @@ a {
           text-transform: uppercase; }
 
 #opening_times {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
   width: 20%;
   min-width: 320px; }
   #opening_times h1, #opening_times h2, #opening_times h3, #opening_times h4, #opening_times h5, #opening_times h6 {
@@ -809,6 +918,37 @@ a {
   .simcal-calendar-grid .simcal-month .simcal-week .simcal-today .simcal-day-label {
     background-color: #6639b6 !important; }
 
+.menu-social-networks-container ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .menu-social-networks-container ul.menu li.menu-item {
+    display: inline-block;
+    height: 40px;
+    margin: 0.25rem;
+    position: relative;
+    width: 40px; }
+    .menu-social-networks-container ul.menu li.menu-item a {
+      color: transparent; }
+    .menu-social-networks-container ul.menu li.menu-item a::before {
+      content: '';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'FontAwesome';
+      font-size: 200%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+    .menu-social-networks-container ul.menu li.menu-item a[href*="facebook"]::before {
+      color: #3B5998;
+      content: '\f230'; }
+    .menu-social-networks-container ul.menu li.menu-item a[href*="twitter"]::before {
+      color: #1DA1F2;
+      content: '\f099'; }
+
 .tablepress thead tr th {
   background-color: transparent;
   border-bottom: none;
@@ -831,10 +971,9 @@ a {
 .block-section.welcome {
   display: flex;
   align-items: center;
-  font-size: 125%;
   font-weight: 200;
   height: 60vh; }
-  .block-section.welcome img {
+  .block-section.welcome .bitc-logo {
     margin-right: 4rem;
     max-height: 256px !important;
     width: auto; }

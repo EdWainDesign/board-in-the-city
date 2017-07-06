@@ -1,6 +1,22 @@
 jQuery(document).ready( function($) {
     'use strict';
 
+    //////////////////////////////////////////
+    //  Smooth Scrolling on Single Front Page
+    //////////////////////////////////////////
+
+    $('a[href*="#"]').on('click', function(e) {
+        e.preventDefault();
+        let href = $(this).attr('href');
+        let header = $('#masthead').outerHeight();
+        let offset = $(href).offset().top - header;
+        $('body').animate({ scrollTop: offset }, 600, 'easeOutExpo');
+    });
+
+    //////////////////////////////////////////
+    //  Game Finder Ajax Script
+    //////////////////////////////////////////
+
     $('.game').on('click', function() {
 
         let post_id = $(this).data('id');

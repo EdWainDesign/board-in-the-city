@@ -8,11 +8,19 @@
  */
 
 require_once('functions/actions/games-post-type.php');
+require_once('functions/actions/social-links-menu.php');
 require_once('functions/functions/the-page-content.php');
+require_once('functions/shortcodes/contact-card.php');
 require_once('functions/shortcodes/game-finder.php');
 require_once('functions/shortcodes/opening-times.php');
 
 require_once('inc/ajax/get-game.php');
+
+//	Don't apply auto-p to shortcodes
+define( 'WPCF7_AUTOP', false );
+// remove_filter( 'the_content', 'wpautop' );
+// add_filter( 'the_content', 'wpautop' , 99);
+// add_filter( 'the_content', 'shortcode_unautop',100 );
 
 if ( ! function_exists( 'bitc_setup' ) ) :
 /**
@@ -127,10 +135,11 @@ function bitc_scripts() {
 	wp_enqueue_style( 'bitc-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bitc-open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' );
 	wp_enqueue_style( 'bitc-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'bitc-zmdi', 'https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css' );
 
 	wp_enqueue_script( 'bitc-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'bitc-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'bitc-jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js', array('jquery'), '20170706', false );
 
 	wp_register_script( 'bitc-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '20170706', false );
 	wp_localize_script( 'bitc-scripts', 'bitc', array( 'ajaxurl' => admin_url('admin-ajax.php' ) ) );

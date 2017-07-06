@@ -1,0 +1,38 @@
+.menu-social-networks-container {
+
+    ul.menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        // text-align: center;
+
+        li.menu-item {
+            display: inline-block;
+            height: 40px;
+            margin: 0.25rem;
+            position: relative;
+            width: 40px;
+            a {
+                color: transparent;
+            }
+            a::before {
+                content: '';
+                display: flex;
+                    align-items: center;
+                    justify-content: center;
+                font-family: 'FontAwesome';
+                font-size: 200%;
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0;
+            }
+            a[href*="facebook"]::before {
+                color: #3B5998;
+                content: '\f230';
+            }
+            a[href*="twitter"]::before {
+                color: #1DA1F2;
+                content: '\f099';
+            }
+        }
+    }
+}
