@@ -94,4 +94,10 @@ jQuery(document).ready( function($) {
         }).removeClass('hide');
     });
 
+    //////////////////////////////////////////
+    //  Remove <p> tags from "Contact Form 7"
+    //////////////////////////////////////////
+
+    $(".wpcf7-form").find("p").contents().unwrap();
+
 });
