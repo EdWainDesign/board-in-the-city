@@ -462,6 +462,12 @@ a {
   .main-navigation a {
     display: block;
     text-decoration: none; }
+  .main-navigation .current_page_item > a,
+  .main-navigation .current-menu-item > a,
+  .main-navigation .current_page_ancestor > a,
+  .main-navigation .current-menu-ancestor > a,
+  .main-navigation .active > a {
+    color: #ffea3a; }
 
 /* Small menu. */
 .menu-toggle,
@@ -879,6 +885,8 @@ a {
           letter-spacing: -1px;
           padding: 0 0.5rem;
           text-transform: uppercase; }
+        #masthead .main-navigation .menu .menu-item.active a {
+          color: #ffea3a; }
 
 #opening_times {
   background-color: rgba(0, 0, 0, 0.08);

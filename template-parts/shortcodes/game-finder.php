@@ -5,7 +5,7 @@
 
             <?php
                 $loop = new WP_Query(
-                    array( 'post_type' => 'game', 'posts_per_page' => 100, 'orderby' => 'name', 'order' => 'ASC' )
+                    array( 'post_type' => 'game', 'posts_per_page' => -1, 'orderby' => 'name', 'order' => 'ASC' )
                 );
                 while ( $loop->have_posts() ) : $loop->the_post();
             ?>
