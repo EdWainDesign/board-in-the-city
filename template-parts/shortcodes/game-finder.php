@@ -10,7 +10,7 @@
                 while ( $loop->have_posts() ) : $loop->the_post();
             ?>
 
-            <li class="game" data-id="<?= the_id() ?>">
+            <li class="game" data-id="<?= the_id() ?>" data-search="<?= the_title() ?>">
                 <?php the_title(); ?>
             </li>
 

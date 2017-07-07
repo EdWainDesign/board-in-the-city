@@ -462,12 +462,6 @@ a {
   .main-navigation a {
     display: block;
     text-decoration: none; }
-  .main-navigation .current_page_item > a,
-  .main-navigation .current-menu-item > a,
-  .main-navigation .current_page_ancestor > a,
-  .main-navigation .current-menu-ancestor > a,
-  .main-navigation .active > a {
-    color: #ffea3a; }
 
 /* Small menu. */
 .menu-toggle,
@@ -796,6 +790,8 @@ a {
         padding: 0.5rem 1rem; }
         #game_finder .game-list-container .game-list .game:hover {
           background-color: rgba(0, 0, 0, 0.1); }
+        #game_finder .game-list-container .game-list .game.hide {
+          display: none; }
   #game_finder .active-game-container {
     padding: 1rem 0 1rem 1rem;
     width: 60%; }

@@ -2,7 +2,7 @@ jQuery(document).ready( function($) {
     'use strict';
 
     //////////////////////////////////////////
-    //  Smooth Scrolling on Single Front Page
+    //  Animate scrolling for local anchors
     //////////////////////////////////////////
 
     $('a[href*="#"]').on('click', function(e) {
@@ -14,54 +14,38 @@ jQuery(document).ready( function($) {
     });
 
     //////////////////////////////////////////
-    //  Menu highlight on scroll (Scrollspy)
+    //  Highlight menu on scroll (Scrollspy)
     //////////////////////////////////////////
 
-    // let header = $('#masthead').outerHeight();
-    // let screen = $(window).innerHeight();
-    let sections = $('#masthead').find('.menu-item a').map((i,el) => {
-        return $(el).attr('href');
-    });
+    if ( $('body').hasClass('.page-template-single-front-page') ) {
 
-    let a = $(window).innerHeight();
-    let b = $('#masthead').outerHeight();
-    let threshold = ((a-b)/2) + b;
-    console.log('threshold:'+threshold);
-
-    $(window).on('scroll', function(e) {
-
-        //  Get the current scroll position
-        let st = $(window).scrollTop();
-        // let info = $('#info').offset().top - st - threshold;
-        let active = null;
-
-        $.each(sections, (i,el) => {
-            if ( $(el).offset().top - st - threshold <= 0 ) {
-                active = el;
-            }
+        let sections = $('#masthead').find('.menu-item a').map((i,el) => {
+            return $(el).attr('href');
         });
 
-        console.log(active);
+        let a = $(window).innerHeight();
+        let b = $('#masthead').outerHeight();
+        let threshold = ((a-b)/2) + b;
 
-        let navitem = $('#masthead').find(`li a[href=${active}]`).closest('li')
+        $(window).on('scroll', function(e) {
+
+            let st = $(window).scrollTop();
+            let active = null;
+
+            $.each(sections, (i,el) => {
+                let os = $(el).offset().top;
+                if ( os - st - threshold <= 0 ) {
+                    active = el;
+                }
+            });
+
+            let navitem = $('#masthead').find(`li a[href=${active}]`).closest('li')
             .siblings('.active').removeClass('active').end().addClass('active');
-        console.log( navitem );
-        // $('#masthead').find(`a[href="${active}"]`).closest('li').addClass('active');
-
-        // console.log(active);
-
-        // console.log(info);
-
-        //  Compare the current scroll position against each sections offset top
-        // let offsets = sections.map((i,el) => {
-        //     return $(el).offset().top - st - header;
-        // });
-
-        // console.log( `screen:${screen-header} half:${screen/2+header} info-offset:` + offsets[0] );
-    });
+        });
+    }
 
     //////////////////////////////////////////
-    //  Game Finder Ajax Script
+    //  'Game Finder' ajax script
     //////////////////////////////////////////
 
     $('.game').on('click', function() {
@@ -95,6 +79,19 @@ jQuery(document).ready( function($) {
                 console.error('error');
             }
         });
-    })
+    });
+
+    //////////////////////////////////////////
+    //  'Game Finder' search script
+    //////////////////////////////////////////
+
+    $('#game_finder .game-list-container input[type="search"]').on('keypress', function(e) {
+        if ( e.which !== 13 ) { return; }
+        let value = e.target.value.toLowerCase();
+        $('#game_finder .game-list .game').addClass('hide');
+        $('#game_finder .game-list .game').filter((i,el) => {
+            return $(el).data('search').toLowerCase().indexOf(value) > -1;
+        }).removeClass('hide');
+    });
 
 });
