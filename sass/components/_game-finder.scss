@@ -120,8 +120,10 @@
     @media screen and ( max-width:900px ) {
         align-items: stretch;
         flex-direction: column;
+        height: auto;
         .game-list-container,
         .active-game-container {
+            height: 300px;
             margin-bottom: 2rem;
             padding: 0;
             width: auto;

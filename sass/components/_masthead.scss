@@ -10,6 +10,9 @@
         margin-right: 1rem;
 
         .custom-logo-link {
+            display: flex;
+                align-items: center;
+                justify-content: center;
             padding: 0.5rem;
 
             .custom-logo {
@@ -41,6 +44,62 @@
                 }
                 &.active a {
                     color: $color__secondary;
+                }
+            }
+        }
+
+        .menu-toggle {
+            background-color: transparent;
+            border: none;
+            color: transparent;
+            height: 56px;
+            position: relative;
+            width: 56px;
+            &::before {
+                color: $color__background-body;
+                content: '\f197';
+                display: flex;
+                    align-items: center;
+                    justify-content: center;
+                font-family: 'Material-Design-Iconic-Font';
+                font-size: 300%;
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0;
+            }
+        }
+    }
+
+    @media screen and ( max-width:37.5em ) {
+        justify-content: center;
+
+        .site-branding { margin: 0; }
+        .main-navigation {
+            min-height: 56px;
+            position: absolute;
+                top: 0; left: 0; right: 0;
+
+            .menu-single-page-container {
+                height: auto;
+                position: absolute;
+                top: 56px; left: 0; right: 0;
+            }
+            .nav-menu {
+                background-color: $color__primary;
+                width: 100%;
+                &[aria-expanded="true"] {
+                    border-bottom: 1px solid rgba(0,0,0,0.16);
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .menu-item {
+                    display: inline-block;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        min-height: 48px;
+                        padding: 0.25rem 1rem;
+                    }
                 }
             }
         }

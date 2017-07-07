@@ -17,7 +17,7 @@ jQuery(document).ready( function($) {
     //  Highlight menu on scroll (Scrollspy)
     //////////////////////////////////////////
 
-    if ( $('body').hasClass('.page-template-single-front-page') ) {
+    if ( $('body').hasClass('page-template-single-front-page') ) {
 
         let sections = $('#masthead').find('.menu-item a').map((i,el) => {
             return $(el).attr('href');
@@ -39,7 +39,7 @@ jQuery(document).ready( function($) {
                 }
             });
 
-            let navitem = $('#masthead').find(`li a[href=${active}]`).closest('li')
+            $('#masthead').find(`li a[href=${active}]`).closest('li')
             .siblings('.active').removeClass('active').end().addClass('active');
         });
     }

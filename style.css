@@ -860,9 +860,11 @@ a {
   @media screen and (max-width: 900px) {
     #game_finder {
       align-items: stretch;
-      flex-direction: column; }
+      flex-direction: column;
+      height: auto; }
       #game_finder .game-list-container,
       #game_finder .active-game-container {
+        height: 300px;
         margin-bottom: 2rem;
         padding: 0;
         width: auto; } }
@@ -877,6 +879,9 @@ a {
   #masthead .site-branding {
     margin-right: 1rem; }
     #masthead .site-branding .custom-logo-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 0.5rem; }
       #masthead .site-branding .custom-logo-link .custom-logo {
         max-height: 40px;
@@ -898,6 +903,58 @@ a {
           text-transform: uppercase; }
         #masthead .main-navigation .menu .menu-item.active a {
           color: #ffea3a; }
+    #masthead .main-navigation .menu-toggle {
+      background-color: transparent;
+      border: none;
+      color: transparent;
+      height: 56px;
+      position: relative;
+      width: 56px; }
+      #masthead .main-navigation .menu-toggle::before {
+        color: #fff;
+        content: '\f197';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Material-Design-Iconic-Font';
+        font-size: 300%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; }
+  @media screen and (max-width: 37.5em) {
+    #masthead {
+      justify-content: center; }
+      #masthead .site-branding {
+        margin: 0; }
+      #masthead .main-navigation {
+        min-height: 56px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0; }
+        #masthead .main-navigation .menu-single-page-container {
+          height: auto;
+          position: absolute;
+          top: 56px;
+          left: 0;
+          right: 0; }
+        #masthead .main-navigation .nav-menu {
+          background-color: #6639b6;
+          width: 100%; }
+          #masthead .main-navigation .nav-menu[aria-expanded="true"] {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; }
+          #masthead .main-navigation .nav-menu .menu-item {
+            display: inline-block; }
+            #masthead .main-navigation .nav-menu .menu-item a {
+              display: flex;
+              align-items: center;
+              min-height: 48px;
+              padding: 0.25rem 1rem; } }
 
 #opening_times {
   background-color: rgba(0, 0, 0, 0.08);
