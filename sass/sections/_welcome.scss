@@ -5,7 +5,7 @@
     font-weight: 200;
     height: 60vh;
 
-    .bitc-logo {
+    .elementor-image img {
         margin-right: 4rem;
         max-height: 256px!important;
         width: auto;
@@ -14,5 +14,16 @@
     strong {
         color: $color__secondary;
         font-weight: 600;
+    }
+
+    @media screen and ( max-width:768px ) {
+        height: auto;
+
+        article { text-align: center; }
+
+        .elementor-image img {
+            margin-right: 0;
+            max-height: 128px!important;
+        }
     }
 }

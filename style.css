@@ -620,6 +620,12 @@ a {
 --------------------------------------------------------------*/
 .block-section {
   padding: 4rem 8%; }
+  @media screen and (max-width: 900px) {
+    .block-section {
+      padding: 3rem 4%; } }
+  @media screen and (max-width: 640px) {
+    .block-section {
+      padding: 2rem 2%; } }
   .block-section:nth-of-type(1), .block-section:nth-of-type(4) {
     background-color: #6639b6;
     color: white; }
@@ -851,6 +857,15 @@ a {
       #game_finder .active-game-container .active-game .active-game-image img {
         max-height: 200px;
         width: auto; }
+  @media screen and (max-width: 900px) {
+    #game_finder {
+      align-items: stretch;
+      flex-direction: column; }
+      #game_finder .game-list-container,
+      #game_finder .active-game-container {
+        margin-bottom: 2rem;
+        padding: 0;
+        width: auto; } }
 
 #masthead {
   background-color: #6639b6;
@@ -986,13 +1001,29 @@ a {
   align-items: center;
   font-weight: 200;
   height: 60vh; }
-  .block-section.welcome .bitc-logo {
+  .block-section.welcome .elementor-image img {
     margin-right: 4rem;
     max-height: 256px !important;
     width: auto; }
   .block-section.welcome strong {
     color: #ffea3a;
     font-weight: 600; }
+  @media screen and (max-width: 768px) {
+    .block-section.welcome {
+      height: auto; }
+      .block-section.welcome article {
+        text-align: center; }
+      .block-section.welcome .elementor-image img {
+        margin-right: 0;
+        max-height: 128px !important; } }
+
+#info .elementor-column.elementor-col-33, #info .elementor-column[data-col="33"] {
+  min-width: 340px; }
+#info .elementor-column.elementor-col-33, #info .elementor-column[data-col="66"] {
+  width: auto; }
+@media screen and (max-width: 1024px) {
+  #info .elementor-element iframe {
+    height: 300px !important; } }
 
 .block-section.menu h2 {
   display: inline-block; }
@@ -1000,6 +1031,18 @@ a {
   display: inline-block;
   margin-left: 0.5rem;
   opacity: 0.5; }
+.block-section.menu .elementor-row {
+  flex-wrap: nowrap; }
+  .block-section.menu .elementor-row .elementor-column:first-of-type {
+    margin-right: 1rem; }
+  .block-section.menu .elementor-row .elementor-column:last-of-type {
+    margin-left: 1rem; }
+  @media screen and (max-width: 768px) {
+    .block-section.menu .elementor-row {
+      flex-wrap: wrap; }
+      .block-section.menu .elementor-row .elementor-column {
+        margin: 0 !important;
+        width: 100%; } }
 .block-section.menu .tablepress.menu thead tr th:first-of-type {
   color: #6639b6;
   font-size: 150%;
@@ -1008,6 +1051,7 @@ a {
 .block-section.menu .tablepress.menu thead tr th:last-of-type {
   color: rgba(0, 0, 0, 0.5);
   font-weight: 300;
+  min-width: 100px;
   text-align: right; }
 .block-section.menu .tablepress.menu tbody td {
   border-top: none; }

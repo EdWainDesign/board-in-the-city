@@ -116,4 +116,15 @@
             }
         }
     }
+
+    @media screen and ( max-width:900px ) {
+        align-items: stretch;
+        flex-direction: column;
+        .game-list-container,
+        .active-game-container {
+            margin-bottom: 2rem;
+            padding: 0;
+            width: auto;
+        }
+    }
 }

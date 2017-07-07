@@ -10,6 +10,19 @@
         opacity: 0.5;
     }
 
+    .elementor-row {
+        flex-wrap: nowrap;
+        .elementor-column:first-of-type { margin-right: 1rem; }
+        .elementor-column:last-of-type  { margin-left: 1rem; }
+        @media screen and ( max-width:768px ) {
+            flex-wrap: wrap;
+            .elementor-column {
+                margin: 0!important;
+                width: 100%;
+            }
+        }
+    }
+
     .tablepress.menu {
 
         thead tr {
@@ -23,6 +36,7 @@
             th:last-of-type {
                 color: rgba(0,0,0,0.5);
                 font-weight: 300;
+                min-width: 100px;
                 text-align: right;
             }
         }
