@@ -19,7 +19,7 @@
 			<span>
 				<?php
 					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Website by %1$s', 'bitc' ), '<a href="http://edwaindesign.co.uk/">Ed Wain</a>' );
+					printf( esc_html__( 'Website by %1$s', 'bitc' ), '<a href="http://edwaindesign.co.uk/">Ed Wain Design</a>' );
 				?>
 			</span>
 		</div><!-- .site-info -->

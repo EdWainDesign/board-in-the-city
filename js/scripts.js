@@ -45,6 +45,28 @@ jQuery(document).ready( function($) {
     }
 
     //////////////////////////////////////////
+    //  Menu options auto-styles
+    //////////////////////////////////////////
+
+    $('#menu .tablepress tbody tr td:first-of-type').each((i,el) => {
+        let text = $(el).text().replace(/\[/g, '<span class="option">').replace(/\]/g, '</span>');
+        $(el).html(text);
+
+        $('.option').each((i,opt) => {
+            let option = $(opt).text();
+            switch ( true ) {
+                case option.indexOf('Vgn') > -1:
+                    $(opt).addClass('vegan'); break;
+                case option.indexOf('GF') > -1:
+                    $(opt).addClass('gluten-free'); break;
+                case option.indexOf('V') > -1:
+                    $(opt).addClass('vegetarian'); break;
+                    break;
+            }
+        });
+    });
+
+    //////////////////////////////////////////
     //  'Game Finder' ajax script
     //////////////////////////////////////////
 
