@@ -1,6 +1,7 @@
 <div id="game_finder">
     <div class="game-list-container">
-        <input type="search" placeholder="Search our games..." />
+        <input class="empty" type="search" placeholder="Search games..." />
+        <i class="zmdi zmdi-close clear"></i>
         <ul class="game-list">
 
             <?php
@@ -23,6 +24,7 @@
     </div>
     <div class="active-game-container">
         <div class="active-game">
+            <i class="zmdi zmdi-close close"></i>
             <h2 class="active-game-title">Game Finder</h2>
             <div class="active-game-meta">
                 <span class="active-game-rating"></span>

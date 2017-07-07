@@ -70,10 +70,11 @@ jQuery(document).ready( function($) {
     //  'Game Finder' ajax script
     //////////////////////////////////////////
 
-    $('.game').on('click', function() {
+    $('.game').on('click', function(e) {
 
         let post_id = $(this).data('id');
-        $('.active-game').addClass('loading').scrollTop(0);
+        $(e.target).siblings('.active').removeClass('active').end().addClass('active');
+        $('.active-game').addClass('active loading').scrollTop(0);
 
         $.ajax({
             type: 'POST',
@@ -83,16 +84,12 @@ jQuery(document).ready( function($) {
                 'post_id': post_id,
                 'action': 'get_game' //this is the name of the AJAX method called in WordPress
             }, success: function (result) {
-                // console.log(result);
-                console.log(result);
-                $('.active-game').removeClass('loading').addClass('active');
+                $('.game-list .game').removeClass('active');
+                $('.game-list').find(`.game[data-id=${result.ID}]`).addClass('active');
+                $('.active-game').removeClass('loading');
                 $('.active-game-title').html(result.post_title);
                 $('.active-game-rating').html(result.post_rating[0].name);
                 $('.active-game-time').html(result.post_gametime[0].name);
-
-                console.log( $('.active-game-time') );
-                console.log( result.post_gametime[0].name );
-
                 $('.active-game-players').html(result.post_players[0].name);
                 $('.active-game-image').html(result.post_image);
                 $('.active-game-content').html(result.post_content);
@@ -103,17 +100,28 @@ jQuery(document).ready( function($) {
         });
     });
 
+    $('#game_finder .active-game .close').on('click', function(e) {
+        $('#game_finder .game-list .active').removeClass('active');
+        $('#game_finder .active-game').removeClass('active');
+    });
+
     //////////////////////////////////////////
     //  'Game Finder' search script
     //////////////////////////////////////////
 
-    $('#game_finder .game-list-container input[type="search"]').on('keypress', function(e) {
-        if ( e.which !== 13 ) { return; }
+    $('#game_finder .game-list-container input[type="search"]').on('keyup', function(e) {
         let value = e.target.value.toLowerCase();
+        console.log(value);
+        if ( value ) { $(e.target).removeClass('empty'); }
+        else         { $(e.target).addClass('empty'); }
         $('#game_finder .game-list .game').addClass('hide');
         $('#game_finder .game-list .game').filter((i,el) => {
             return $(el).data('search').toLowerCase().indexOf(value) > -1;
         }).removeClass('hide');
+    });
+
+    $('#game_finder .game-list-container .clear').on('click', function(e) {
+        $('#game_finder .game-list-container input').val('').trigger('keyup');
     });
 
     //////////////////////////////////////////

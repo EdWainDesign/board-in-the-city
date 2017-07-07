@@ -102,6 +102,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "components/colophon";
 @import "components/contact-card";
 @import "components/contact-form-7";
+@import "components/elementor";
 @import "components/game-finder";
 @import "components/masthead";
 @import "components/opening-times";
@@ -115,7 +116,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "sections/welcome";
 @import "sections/info";
 @import "sections/menu";
+@import "sections/games";
+@import "sections/events";
 @import "sections/bookings";
+@import "sections/about";
 
 /*--------------------------------------------------------------
 # Infinite scroll
