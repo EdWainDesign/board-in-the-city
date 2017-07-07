@@ -15,6 +15,16 @@ function create_game_post_type() {
     );
 
     register_taxonomy(
+        'gametime',
+        'game',
+        array(
+            'label' => __( 'Playing Time' ),
+            'rewrite' => array( 'slug' => 'gametime' ),
+            'hierarchical' => false,
+        )
+    );
+
+    register_taxonomy(
         'rating',
         'game',
         array(

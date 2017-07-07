@@ -12,8 +12,8 @@
     }
 
 
-    tr.odd td  { background-color: rgba(0,0,0,0.05); }
-    tr.even td { background-color: transparent; }
-    thead + tbody tr.odd td  { background-color: transparent; }
-    thead + tbody tr.even td { background-color: rgba(0,0,0,0.05); }
+    tr.odd td  { background-color: rgba(0,0,0,0.05); border-top: none; }
+    tr.even td { background-color: transparent; border-top: none; }
+    thead + tbody tr.odd td  { background-color: transparent; border-top: none; }
+    thead + tbody tr.even td { background-color: rgba(0,0,0,0.05); border-top: none; }
 }

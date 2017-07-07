@@ -758,7 +758,8 @@ a {
   display: flex;
   align-items: stretch;
   height: 400px;
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  text-align: left; }
   #game_finder .game-list-container {
     padding: 1rem 1rem 1rem 0;
     width: 40%; }
@@ -828,15 +829,19 @@ a {
         font-weight: 500;
         margin-bottom: 1rem; }
         #game_finder .active-game-container .active-game.active .active-game-meta .active-game-rating,
+        #game_finder .active-game-container .active-game.active .active-game-meta .active-game-time,
         #game_finder .active-game-container .active-game.active .active-game-meta .active-game-players {
           background-color: rgba(0, 0, 0, 0.1);
           border-radius: 4px;
+          margin-right: 0.5rem;
           padding: 0.25rem 0.5rem; }
-        #game_finder .active-game-container .active-game.active .active-game-meta .active-game-rating {
-          margin-right: 0.5rem; }
-          #game_finder .active-game-container .active-game.active .active-game-meta .active-game-rating::before {
-            content: 'Age:';
-            margin-right: 0.25rem; }
+        #game_finder .active-game-container .active-game.active .active-game-meta .active-game-rating::before {
+          content: 'Age:';
+          margin-right: 0.25rem; }
+        #game_finder .active-game-container .active-game.active .active-game-meta .active-game-time::before {
+          content: '\f017';
+          font-family: 'FontAwesome';
+          margin-right: 0.25rem; }
         #game_finder .active-game-container .active-game.active .active-game-meta .active-game-players::before {
           content: '\f0c0';
           font-family: 'FontAwesome';
@@ -957,13 +962,17 @@ a {
   background-color: rgba(0, 0, 0, 0.05);
   cursor: pointer; }
 .tablepress tr.odd td {
-  background-color: rgba(0, 0, 0, 0.05); }
+  background-color: rgba(0, 0, 0, 0.05);
+  border-top: none; }
 .tablepress tr.even td {
-  background-color: transparent; }
+  background-color: transparent;
+  border-top: none; }
 .tablepress thead + tbody tr.odd td {
-  background-color: transparent; }
+  background-color: transparent;
+  border-top: none; }
 .tablepress thead + tbody tr.even td {
-  background-color: rgba(0, 0, 0, 0.05); }
+  background-color: rgba(0, 0, 0, 0.05);
+  border-top: none; }
 
 /*--------------------------------------------------------------
 # Sections

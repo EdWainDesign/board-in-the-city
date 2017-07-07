@@ -31,9 +31,15 @@ jQuery(document).ready( function($) {
                 'action': 'get_game' //this is the name of the AJAX method called in WordPress
             }, success: function (result) {
                 // console.log(result);
+                console.log(result);
                 $('.active-game').removeClass('loading').addClass('active');
                 $('.active-game-title').html(result.post_title);
                 $('.active-game-rating').html(result.post_rating[0].name);
+                $('.active-game-time').html(result.post_gametime[0].name);
+
+                console.log( $('.active-game-time') );
+                console.log( result.post_gametime[0].name );
+
                 $('.active-game-players').html(result.post_players[0].name);
                 $('.active-game-image').html(result.post_image);
                 $('.active-game-content').html(result.post_content);

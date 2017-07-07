@@ -5,7 +5,7 @@
 
             <?php
                 $loop = new WP_Query(
-                    array( 'post_type' => 'games', 'posts_per_page' => 100, 'order' => 'ASC' )
+                    array( 'post_type' => 'game', 'posts_per_page' => 100, 'orderby' => 'name', 'order' => 'ASC' )
                 );
                 while ( $loop->have_posts() ) : $loop->the_post();
             ?>
@@ -26,6 +26,7 @@
             <h2 class="active-game-title">Game Finder</h2>
             <div class="active-game-meta">
                 <span class="active-game-rating"></span>
+                <span class="active-game-time"></span>
                 <span class="active-game-players"></span>
             </div>
             <div class="active-game-image"></div>
