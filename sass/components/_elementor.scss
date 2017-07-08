@@ -1,12 +1,11 @@
 .elementor {
+    margin: 0 auto;
     .elementor-inner {
         .elementor-section-wrap {
             .elementor-element {
                 .elementor-container {
                     .elementor-row {
-                        .elementor-column {
-
-                        }
+                        .elementor-column {}
                     }
                 }
             }
@@ -18,5 +17,28 @@
     .elementor-heading-title {
         font-size: 300%;
         letter-spacing: -5px;
+    }
+}
+
+.elementor-text-editor {
+    p, ul {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 768px;
+    }
+}
+
+.elementor-slick-slider {
+    .elementor-image-carousel {
+        ul.slick-dots {
+            li button::before {
+                color: $color__background-body;
+                transition: all 0.25s;
+            }
+            li.slick-active button::before {
+                color: $color__secondary;
+                font-size: 0.75rem;
+            }
+        }
     }
 }

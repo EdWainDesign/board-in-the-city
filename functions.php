@@ -13,14 +13,9 @@ require_once('functions/functions/the-page-content.php');
 require_once('functions/shortcodes/contact-card.php');
 require_once('functions/shortcodes/game-finder.php');
 require_once('functions/shortcodes/opening-times.php');
+require_once('functions/shortcodes/page-content.php');
 
 require_once('inc/ajax/get-game.php');
-
-//	Don't apply auto-p to shortcodes
-define( 'WPCF7_AUTOP', false );
-// remove_filter( 'the_content', 'wpautop' );
-// add_filter( 'the_content', 'wpautop' , 99);
-// add_filter( 'the_content', 'shortcode_unautop',100 );
 
 if ( ! function_exists( 'bitc_setup' ) ) :
 /**

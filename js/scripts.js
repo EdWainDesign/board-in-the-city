@@ -9,7 +9,7 @@ jQuery(document).ready( function($) {
         e.preventDefault();
         let href = $(this).attr('href');
         let header = $('#masthead').outerHeight();
-        let offset = $(href).offset().top - header;
+        let offset = $(href).offset().top - header + 1;
         $('body').animate({ scrollTop: offset }, 600, 'easeOutExpo');
     });
 
@@ -48,7 +48,7 @@ jQuery(document).ready( function($) {
     //  Menu options auto-styles
     //////////////////////////////////////////
 
-    $('#menu .tablepress tbody tr td:first-of-type').each((i,el) => {
+    function format(i,el) {
         let text = $(el).text().replace(/\[/g, '<span class="option">').replace(/\]/g, '</span>');
         $(el).html(text);
 
@@ -64,7 +64,10 @@ jQuery(document).ready( function($) {
                     break;
             }
         });
-    });
+    }
+
+    $('#menu .elementor-text-editor strong').each(format);
+    $('#menu .tablepress tbody tr td:first-of-type').each(format);
 
     //////////////////////////////////////////
     //  'Game Finder' ajax script

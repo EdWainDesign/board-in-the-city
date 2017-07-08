@@ -286,7 +286,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #fff;
+  background: #f1f1f1;
   /* Fallback for when there is no custom background color defined. */
   font-family: 'Open Sans', 'Verdana', sans-serif; }
 
@@ -622,6 +622,8 @@ a {
 # Components
 --------------------------------------------------------------*/
 .block-section {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.8);
   padding: 4rem 8%; }
   @media screen and (max-width: 900px) {
     .block-section {
@@ -629,23 +631,16 @@ a {
   @media screen and (max-width: 640px) {
     .block-section {
       padding: 2rem 2%; } }
-  .block-section:nth-of-type(1), .block-section:nth-of-type(4) {
+  .block-section:nth-of-type(odd) {
     background-color: #6639b6;
     color: white; }
-  .block-section:nth-of-type(2), .block-section:nth-of-type(5) {
-    background-color: transparent;
-    color: rgba(0, 0, 0, 0.8); }
-  .block-section:nth-of-type(3), .block-section:nth-of-type(6) {
-    background-color: #ffea3a;
-    color: rgba(0, 0, 0, 0.8); }
   .block-section article h1 {
     font-size: 300%;
     font-weight: 700;
     letter-spacing: -4px; }
   .block-section article p {
     margin-left: auto;
-    margin-right: auto;
-    max-width: 50rem; }
+    margin-right: auto; }
 
 #colophon {
   background-color: #6639b6;
@@ -782,9 +777,24 @@ a {
     .wpcf7 form.wpcf7-form .wpcf7-submit:hover {
       background-color: #6639b6; }
 
+.elementor {
+  margin: 0 auto; }
+
 .elementor-widget-heading .elementor-heading-title {
   font-size: 300%;
   letter-spacing: -5px; }
+
+.elementor-text-editor p, .elementor-text-editor ul {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 768px; }
+
+.elementor-slick-slider .elementor-image-carousel ul.slick-dots li button::before {
+  color: #fff;
+  transition: all 0.25s; }
+.elementor-slick-slider .elementor-image-carousel ul.slick-dots li.slick-active button::before {
+  color: #ffea3a;
+  font-size: 0.75rem; }
 
 #game_finder {
   display: flex;
@@ -1079,9 +1089,29 @@ a {
       opacity: 0.2; }
 .simcal-calendar-grid .simcal-month .simcal-week td div {
   background-color: #fff;
-  border: none !important;
-  max-height: 120px !important;
-  min-height: 120px !important; }
+  border: none !important; }
+.simcal-calendar-grid .simcal-month .simcal-week .simcal-day {
+  background-color: #f1f1f1;
+  position: relative; }
+  .simcal-calendar-grid .simcal-month .simcal-week .simcal-day .simcal-day-label {
+    color: rgba(0, 0, 0, 0.25);
+    font-weight: 700;
+    letter-spacing: -1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    padding: 0.5rem; }
+  .simcal-calendar-grid .simcal-month .simcal-week .simcal-day:hover {
+    outline: 2px solid #ffea3a;
+    outline-offset: -2px; }
+    .simcal-calendar-grid .simcal-month .simcal-week .simcal-day:hover .simcal-day-label {
+      color: #ffea3a; }
+.simcal-calendar-grid .simcal-month .simcal-week .simcal-day-void:hover {
+  background-color: transparent;
+  outline: none; }
 .simcal-calendar-grid .simcal-month .simcal-week .simcal-today {
   background-color: rgba(0, 0, 0, 0.1);
   background-color: #6639b6; }
@@ -1190,12 +1220,12 @@ a {
         margin: 0 !important;
         width: 100%; } }
 .block-section.menu .tablepress.menu thead tr th:first-of-type {
-  color: #6639b6;
+  color: #ffea3a;
   font-size: 150%;
   letter-spacing: -2px;
   text-transform: uppercase; }
 .block-section.menu .tablepress.menu thead tr th:last-of-type {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 300;
   min-width: 100px;
   text-align: right; }
@@ -1204,7 +1234,7 @@ a {
 .block-section.menu .tablepress.menu tbody tr td:first-of-type {
   width: 70%; }
 .block-section.menu .tablepress.menu tbody tr td:last-of-type {
-  color: #6639b6;
+  color: #ffea3a;
   font-weight: 700;
   text-align: right; }
 .block-section.menu .option {

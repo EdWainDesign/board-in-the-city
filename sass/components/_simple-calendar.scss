@@ -23,8 +23,30 @@
             td div {
                 background-color: $color__background-body;
                 border: none!important;
-                max-height: 120px!important;
-                min-height: 120px!important;
+            }
+
+            .simcal-day {
+                background-color: $color__background-screen;
+                position: relative;
+                .simcal-day-label {
+                    color: rgba(0,0,0,0.25);
+                    font-weight: 700;
+                    letter-spacing: -1px;
+                    position: absolute;
+                    top: 0; right: 0; bottom: 0; left: 0;
+                    background-color: transparent;
+                    padding: 0.5rem;
+                }
+                &:hover {
+                    outline: 2px solid $color__secondary;
+                    outline-offset: -2px;
+                    .simcal-day-label { color: $color__secondary; }
+                }
+            }
+
+            .simcal-day-void:hover {
+                background-color: transparent;
+                outline: none;
             }
 
             .simcal-today {
