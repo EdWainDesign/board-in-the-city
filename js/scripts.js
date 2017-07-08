@@ -77,7 +77,7 @@ jQuery(document).ready( function($) {
 
         let post_id = $(this).data('id');
         $(e.target).siblings('.active').removeClass('active').end().addClass('active');
-        $('.active-game').addClass('active loading').scrollTop(0);
+        $('.active-game-container, .active-game').addClass('active loading').scrollTop(0);
 
         $.ajax({
             type: 'POST',
@@ -87,15 +87,18 @@ jQuery(document).ready( function($) {
                 'post_id': post_id,
                 'action': 'get_game' //this is the name of the AJAX method called in WordPress
             }, success: function (result) {
-                $('.game-list .game').removeClass('active');
-                $('.game-list').find(`.game[data-id=${result.ID}]`).addClass('active');
-                $('.active-game').removeClass('loading');
-                $('.active-game-title').html(result.post_title);
-                $('.active-game-rating').html(result.post_rating[0].name);
-                $('.active-game-time').html(result.post_gametime[0].name);
-                $('.active-game-players').html(result.post_players[0].name);
-                $('.active-game-image').html(result.post_image);
-                $('.active-game-content').html(result.post_content);
+                // $('.game-list .game').removeClass('active');
+                // $('.game-list').find(`.game[data-id=${result.ID}]`).addClass('active');
+
+                $('#game_finder [data-insert]').each((i,el) => {
+                    let prop = $(el).data('insert');
+                    let value = result[`post_${prop}`];
+                    if ( Array.isArray(value) ) { value = value[0] ? value[0].name : null; }
+                    if ( value ) { $(el).html(value).removeClass('hide'); }
+                    else         { $(el).addClass('hide').html(''); }
+                });
+
+                $('.active-game-container, .active-game').removeClass('loading');
             },
             error: function () {
                 console.error('error');
@@ -103,9 +106,12 @@ jQuery(document).ready( function($) {
         });
     });
 
-    $('#game_finder .active-game .close').on('click', function(e) {
+    $('#game_finder .active-game-container .close').on('click', function(e) {
         $('#game_finder .game-list .active').removeClass('active');
         $('#game_finder .active-game').removeClass('active');
+        setTimeout(() => {
+            $('#game_finder').find('.active-game-title, .active-game-rating, .active-game-time, .active-game-players, .active-game-image, .active-game-content').html('');
+        }, 500 );
     });
 
     //////////////////////////////////////////

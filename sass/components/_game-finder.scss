@@ -1,7 +1,7 @@
 #game_finder {
     display: flex;
         align-items: stretch;
-    height: 400px;
+    height: 500px;
     margin-top: 2rem;
     text-align: left;
 
@@ -52,7 +52,7 @@
             height: calc(100% - 56px);
             margin: 0;
             padding: 0;
-            overflow-y: scroll;
+            overflow-y: auto;
             &::-webkit-scrollbar-track { background-color: transparent; }
             &::-webkit-scrollbar {       background-color: transparent; width: 0.5rem; }
             &::-webkit-scrollbar-thumb { background-color: $color__secondary; }
@@ -71,12 +71,25 @@
     .active-game-container {
         width: calc(100% - 240px);
 
+        .close {
+            color: rgba(0,0,0,0.25);
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 150%;
+            height: 40px; min-width: 40px;
+            position: absolute; top: 0.5rem; right: 0.5rem;
+            transition: color 0.25s;
+            z-index: 5;
+            &:hover { color: #f44336; }
+        }
+
         .active-game {
             background-color: $color__background-body;
             color: $color__text-main;
             height: 100%;
-            overflow-y: scroll;
-            padding: 2rem;
+            overflow-y: auto;
             position: relative;
             &::-webkit-scrollbar-track { background-color: transparent; }
             &::-webkit-scrollbar {       background-color: transparent; width: 0.5rem; }
@@ -90,57 +103,88 @@
                         top: 0; right: 0; bottom: 0; left: 0;
                     text-align: center;
                 }
+                .active-game-header { display: none; }
             }
+            &:not(.active) .active-game-header .active-game-meta { display: none; }
+            .hide { display: none; }
 
-            .close { display: none; }
-
-            .active-game-title {
-                font-weight: 700;
-                letter-spacing: -2px;
-                margin: 0 0 1rem;
-                text-transform: uppercase;
-            }
-
-            &.active .active-game-meta {
-                color: rgba(0,0,0,0.5);
+            .active-game-header {
+                background-color: $color__background-body;
                 display: flex;
-                font-size: 75%;
-                font-weight: 500;
-                margin-bottom: 1rem;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                min-height: 40px;
+                padding: 1.5rem 40px 0.5rem;
+                position: sticky; top: 0;
 
-                .active-game-rating,
-                .active-game-time,
-                .active-game-players {
-                    background-color: rgba(0,0,0,0.1);
-                    border-radius: 4px;
-                    margin-right: 0.5rem;
-                    padding: 0.25rem 0.5rem;
+                .active-game-title {
+                    font-weight: 700;
+                    letter-spacing: -2px;
+                    line-height: 1.2;
+                    margin: 0 0 0.5rem;
+                    padding: 0.2rem 0.5rem;
+                    text-align: center;
+                    text-transform: uppercase;
                 }
 
-                .active-game-rating {
-                    &::before {
-                        content: 'Age:';
-                        margin-right: 0.25rem;
+                .active-game-meta {
+                    color: rgba(0,0,0,0.5);
+                    display: flex;
+                        justify-content: center;
+                    font-size: 75%;
+                    font-weight: 500;
+                    margin-bottom: 0.5rem;
+
+                    .active-game-rating,
+                    .active-game-time,
+                    .active-game-players {
+                        background-color: rgba(0,0,0,0.1);
+                        border-radius: 12px;
+                        line-height: 24px;
+                        margin-right: 0.5rem;
+                        padding: 0 0.5rem;
                     }
-                }
-                .active-game-time {
-                    &::before {
-                        content: '\f017';
-                        font-family: 'FontAwesome';
-                        margin-right: 0.25rem;
+
+                    .active-game-rating {
+                        &::before {
+                            content: 'Age:';
+                            margin-right: 0.25rem;
+                        }
                     }
-                }
-                .active-game-players {
-                    &::before {
-                        content: '\f0c0';
-                        font-family: 'FontAwesome';
-                        margin-right: 0.25rem;
+                    .active-game-time {
+                        &::before {
+                            content: '\f017';
+                            font-family: 'FontAwesome';
+                            margin-right: 0.25rem;
+                        }
+                    }
+                    .active-game-players {
+                        &::before {
+                            content: '\f0c0';
+                            font-family: 'FontAwesome';
+                            margin-right: 0.25rem;
+                        }
                     }
                 }
             }
 
+            .active-game-body {
+                padding: 0.5rem 1.5rem 1.5rem;
+
+                .active-game-content {
+                    margin: 0;
+                }
+            }
+
+            .active-game-image {
+                display: flex;
+                    justify-content: center;
+                padding-top: 1.5rem;
+                text-align: center;
+            }
             .active-game-image img {
-                max-height: 200px;
+                max-height: 150px;
                 width: auto;
             }
         }
@@ -160,28 +204,18 @@
         .active-game-container {
             pointer-events: none;
 
-            .close {
-                color: rgba(0,0,0,0.25);
-                cursor: pointer;
+            &.active .close {
                 display: flex;
-                    align-items: center;
-                    justify-content: center;
-                font-size: 150%;
-                height: 40px; width: 40px;
-                position: absolute; top: 0.5rem; right: 0;
-                transition: color 0.25s;
-                &:hover {
-                    color: #f44336;
-                }
-            }
-        }
-
-        .active-game-container .active-game {
-            opacity: 0;
-            transition: opacity 0.25s;
-            &.active {
-                opacity: 1;
                 pointer-events: auto;
+            }
+
+            .active-game {
+                opacity: 0;
+                transition: opacity 0.25s;
+                &.active {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
             }
         }
     }

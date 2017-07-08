@@ -23,16 +23,20 @@
         </ul>
     </div>
     <div class="active-game-container">
+        <i class="zmdi zmdi-close close"></i>
         <div class="active-game">
-            <i class="zmdi zmdi-close close"></i>
-            <h2 class="active-game-title">Game Finder</h2>
-            <div class="active-game-meta">
-                <span class="active-game-rating"></span>
-                <span class="active-game-time"></span>
-                <span class="active-game-players"></span>
+            <div class="active-game-image" data-insert="image"></div>
+            <header class="active-game-header">
+                <h2 class="active-game-title" data-insert="title">Game Finder</h2>
+                <div class="active-game-meta">
+                    <span class="active-game-rating"  data-insert="rating"></span>
+                    <span class="active-game-time"    data-insert="gametime"></span>
+                    <span class="active-game-players" data-insert="players"></span>
+                </div>
+            </header>
+            <div class="active-game-body">
+                <p class="active-game-content" data-insert="content">Find out more about a game by selecting it on the left.</p>
             </div>
-            <div class="active-game-image"></div>
-            <p class="active-game-content">Find out more about a game by selecting it on the left.</p>
         </div>
     </div>
 </div>
