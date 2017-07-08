@@ -1264,6 +1264,11 @@ a {
     font-weight: 700;
     letter-spacing: -1px; }
 
+#about .elementor {
+  max-width: 900px; }
+  #about .elementor .elementor-icon {
+    color: #6639b6; }
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
