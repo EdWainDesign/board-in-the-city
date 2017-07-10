@@ -11,6 +11,9 @@ html {
 body {
 	background: $color__background-screen; /* Fallback for when there is no custom background color defined. */
 	font-family: 'Open Sans', 'Verdana', sans-serif;
+	&::-webkit-scrollbar-track { background-color: transparent; }
+	&::-webkit-scrollbar {       background-color: transparent; width: 0; }
+	&::-webkit-scrollbar-thumb { background-color: transparent; }
 }
 
 blockquote, q {

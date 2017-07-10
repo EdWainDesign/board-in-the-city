@@ -289,6 +289,13 @@ body {
   background: #f1f1f1;
   /* Fallback for when there is no custom background color defined. */
   font-family: 'Open Sans', 'Verdana', sans-serif; }
+  body::-webkit-scrollbar-track {
+    background-color: transparent; }
+  body::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0; }
+  body::-webkit-scrollbar-thumb {
+    background-color: transparent; }
 
 blockquote, q {
   quotes: "" ""; }
@@ -632,7 +639,7 @@ a {
     .block-section {
       padding: 2rem 2%; } }
   .block-section:nth-of-type(odd) {
-    background-color: #6639b6;
+    background-color: #6639B6;
     color: white; }
   .block-section article h1 {
     font-size: 300%;
@@ -643,7 +650,7 @@ a {
     margin-right: auto; }
 
 #colophon {
-  background-color: #6639b6;
+  background-color: #6639B6;
   color: rgba(255, 255, 255, 0.75);
   display: flex;
   align-items: center;
@@ -668,9 +675,12 @@ a {
 #contact_card {
   background-color: rgba(0, 0, 0, 0.08);
   margin-bottom: 2rem;
-  padding: 1rem 2rem;
-  width: 20%;
-  min-width: 320px; }
+  padding: 1rem 2rem; }
+  @media screen and (max-width: 767px) {
+    #contact_card {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 360px; } }
   #contact_card h1, #contact_card h2, #contact_card h3, #contact_card h4, #contact_card h5, #contact_card h6 {
     margin: 0 0 1rem;
     text-align: center; }
@@ -701,8 +711,17 @@ a {
     width: calc( (100% / 12 * 6) - 4px ); }
   .wpcf7 form.wpcf7-form .col-12, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.col-12 {
     width: calc( (100% / 12 * 12) - 4px ); }
+  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.private-room {
+    width: 50%; }
+    .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.private-room .wpcf7-form-control {
+      background-color: #fff;
+      color: #666;
+      font-weight: 300;
+      margin: 2px;
+      width: calc(100% - 4px); }
   @media screen and (max-width: 768px) {
-    .wpcf7 form.wpcf7-form [class*="col"] {
+    .wpcf7 form.wpcf7-form [class*="col"],
+    .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.private-room {
       width: 100% !important; } }
   .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap {
     display: block;
@@ -736,7 +755,7 @@ a {
       display: flex;
       align-items: center;
       line-height: 20px;
-      padding-left: calc(48px + 0.5rem);
+      padding-left: 48px;
       position: absolute;
       top: 0;
       right: 0;
@@ -754,8 +773,10 @@ a {
         top: 0;
         left: 0; }
     .wpcf7 form.wpcf7-form .wpcf7-checkbox input:checked + .wpcf7-list-item-label::before {
+      color: #6639B6;
       content: '\f26a'; }
     .wpcf7 form.wpcf7-form .wpcf7-checkbox input:not(:checked) + .wpcf7-list-item-label::before {
+      color: rgba(0, 0, 0, 0.25);
       content: '\f279'; }
   .wpcf7 form.wpcf7-form span.wpcf7-list-item {
     display: block;
@@ -775,7 +796,7 @@ a {
     transition: background-color 0.25s;
     width: calc(100% - 4px); }
     .wpcf7 form.wpcf7-form .wpcf7-submit:hover {
-      background-color: #6639b6; }
+      background-color: #6639B6; }
 
 .elementor {
   margin: 0 auto; }
@@ -866,7 +887,7 @@ a {
         #game_finder .game-list-container .game-list .game:hover {
           background-color: rgba(0, 0, 0, 0.1); }
         #game_finder .game-list-container .game-list .game.active {
-          color: #6639b6;
+          color: #6639B6;
           font-weight: 700;
           letter-spacing: -1px; }
         #game_finder .game-list-container .game-list .game.hide {
@@ -1000,7 +1021,7 @@ a {
             pointer-events: auto; } }
 
 #masthead {
-  background-color: #6639b6;
+  background-color: #6639B6;
   display: flex;
   align-items: center;
   position: sticky;
@@ -1071,7 +1092,7 @@ a {
           left: 0;
           right: 0; }
         #masthead .main-navigation .nav-menu {
-          background-color: #6639b6;
+          background-color: #6639B6;
           width: 100%; }
           #masthead .main-navigation .nav-menu[aria-expanded="true"] {
             border-bottom: 1px solid rgba(0, 0, 0, 0.16);
@@ -1089,9 +1110,12 @@ a {
 #opening_times {
   background-color: rgba(0, 0, 0, 0.08);
   margin-bottom: 2rem;
-  padding: 1rem 2rem;
-  width: 20%;
-  min-width: 320px; }
+  padding: 1rem 2rem; }
+  @media screen and (max-width: 767px) {
+    #opening_times {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 360px; } }
   #opening_times h1, #opening_times h2, #opening_times h3, #opening_times h4, #opening_times h5, #opening_times h6 {
     margin: 0 0 1rem;
     text-align: center; }
@@ -1111,43 +1135,25 @@ a {
   #opening_times span.op-closed {
     color: #F44336; }
 
-.simcal-calendar-grid .simcal-calendar-head {
-  background-color: #6639b6;
-  color: #fff; }
-  .simcal-calendar-grid .simcal-calendar-head .simcal-nav .simcal-nav-button {
-    color: inherit; }
-    .simcal-calendar-grid .simcal-calendar-head .simcal-nav .simcal-nav-button[disabled="disabled"] {
-      opacity: 0.2; }
-.simcal-calendar-grid .simcal-month .simcal-week td div {
-  background-color: #fff;
-  border: none !important; }
-.simcal-calendar-grid .simcal-month .simcal-week .simcal-day {
-  background-color: #f1f1f1;
-  position: relative; }
-  .simcal-calendar-grid .simcal-month .simcal-week .simcal-day .simcal-day-label {
-    color: rgba(0, 0, 0, 0.25);
-    font-weight: 700;
-    letter-spacing: -1px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: transparent;
-    padding: 0.5rem; }
-  .simcal-calendar-grid .simcal-month .simcal-week .simcal-day:hover {
-    outline: 2px solid #ffea3a;
-    outline-offset: -2px; }
-    .simcal-calendar-grid .simcal-month .simcal-week .simcal-day:hover .simcal-day-label {
-      color: #ffea3a; }
-.simcal-calendar-grid .simcal-month .simcal-week .simcal-day-void:hover {
-  background-color: transparent;
-  outline: none; }
-.simcal-calendar-grid .simcal-month .simcal-week .simcal-today {
-  background-color: rgba(0, 0, 0, 0.1);
-  background-color: #6639b6; }
-  .simcal-calendar-grid .simcal-month .simcal-week .simcal-today .simcal-day-label {
-    background-color: #6639b6 !important; }
+.simcal-calendar-grid,
+.simcal-calendar-list {
+  background-color: #fff; }
+  .simcal-calendar-grid .simcal-calendar-head,
+  .simcal-calendar-list .simcal-calendar-head {
+    background-color: #6639B6;
+    color: white; }
+    .simcal-calendar-grid .simcal-calendar-head .simcal-nav .simcal-nav-button,
+    .simcal-calendar-list .simcal-calendar-head .simcal-nav .simcal-nav-button {
+      color: inherit;
+      min-height: 40px; }
+      .simcal-calendar-grid .simcal-calendar-head .simcal-nav .simcal-nav-button[disabled="disabled"],
+      .simcal-calendar-list .simcal-calendar-head .simcal-nav .simcal-nav-button[disabled="disabled"] {
+        opacity: 0.2; }
+
+.simcal-calendar-list .simcal-calendar-head {
+  padding-top: 10px; }
+.simcal-calendar-list .simcal-events-list-container {
+  margin: 0; }
 
 .menu-social-networks-container ul.menu {
   list-style-type: none;
@@ -1224,13 +1230,11 @@ a {
         margin-right: 0;
         max-height: 128px !important; } }
 
-#info .elementor-column.elementor-col-33, #info .elementor-column[data-col="33"] {
-  min-width: 340px; }
-#info .elementor-column.elementor-col-33, #info .elementor-column[data-col="66"] {
-  width: auto; }
-@media screen and (max-width: 1024px) {
-  #info .elementor-element iframe {
-    height: 300px !important; } }
+@media screen and (min-width: 767px) {
+  #info .elementor-row:first-of-type {
+    flex-wrap: nowrap; }
+    #info .elementor-row:first-of-type .elementor-column.elementor-col-33, #info .elementor-row:first-of-type .elementor-column[data-col="33"] {
+      min-width: 340px; } }
 
 .block-section.menu h2 {
   display: inline-block; }
@@ -1288,7 +1292,7 @@ a {
     background-color: #FF5722; }
 
 .block-section.bookings a {
-  color: #6639b6;
+  color: #6639B6;
   text-decoration: none; }
   .block-section.bookings a strong {
     font-size: 200%;
@@ -1298,7 +1302,7 @@ a {
 #about .elementor {
   max-width: 900px; }
   #about .elementor .elementor-icon {
-    color: #6639b6; }
+    color: #6639B6; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

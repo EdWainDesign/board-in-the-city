@@ -11,6 +11,7 @@ jQuery(document).ready( function($) {
         let header = $('#masthead').outerHeight();
         let offset = $(href).offset().top - header + 1;
         $('body').animate({ scrollTop: offset }, 600, 'easeOutExpo');
+        $('.menu-toggle').click();
     });
 
     //////////////////////////////////////////
