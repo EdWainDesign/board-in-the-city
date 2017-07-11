@@ -18,32 +18,29 @@ jQuery(document).ready( function($) {
     //  Highlight menu on scroll (Scrollspy)
     //////////////////////////////////////////
 
-    if ( $('body').hasClass('page-template-single-front-page') ) {
+    let sections = $('#masthead').find('.menu-item a').map((i,el) => {
+        return $(el).attr('href');
+    });
 
-        let sections = $('#masthead').find('.menu-item a').map((i,el) => {
-            return $(el).attr('href');
+    let a = $(window).innerHeight();
+    let b = $('#masthead').outerHeight();
+    let threshold = ((a-b)/2) + b;
+
+    $(window).on('scroll', function(e) {
+
+        let st = $(window).scrollTop();
+        let active = null;
+
+        $.each(sections, (i,el) => {
+            let os = $(el).offset().top;
+            if ( os - st - threshold <= 0 ) {
+                active = el;
+            }
         });
 
-        let a = $(window).innerHeight();
-        let b = $('#masthead').outerHeight();
-        let threshold = ((a-b)/2) + b;
-
-        $(window).on('scroll', function(e) {
-
-            let st = $(window).scrollTop();
-            let active = null;
-
-            $.each(sections, (i,el) => {
-                let os = $(el).offset().top;
-                if ( os - st - threshold <= 0 ) {
-                    active = el;
-                }
-            });
-
-            $('#masthead').find(`li a[href=${active}]`).closest('li')
-            .siblings('.active').removeClass('active').end().addClass('active');
-        });
-    }
+        $('#masthead').find(`li a[href=${active}]`).closest('li')
+        .siblings('.active').removeClass('active').end().addClass('active');
+    });
 
     //////////////////////////////////////////
     //  Menu options auto-styles

@@ -32,6 +32,19 @@
                 height: 80px;
                 resize: vertical;
             }
+
+            .wpcf7-not-valid-tip {
+                background-color: rgba(255,0,0,0.04);
+                border-bottom: 1px solid $color__error;
+                display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                font-size: 75%;
+                padding: 0 0.25rem;
+                pointer-events: none;
+                position: absolute;
+                    top: 2px; right: 2px; bottom: 2px; left: 2px;
+            }
         }
 
         .wpcf7-checkbox {
@@ -94,8 +107,18 @@
             text-transform: uppercase;
             transition: background-color 0.25s;
             width: calc(100% - 4px);
-            width: 50%;
+            width: 60%;
             &:hover { background-color: $color__primary; }
         }
+
+        .ajax-loader { display: none; }
+        .wpcf7-response-output {
+            border: none!important;
+            margin: 0 auto;
+            text-align: center;
+            width: 60%;
+        }
+        div.wpcf7-mail-sent-ok      { color: $color__success; }
+        div.wpcf7-validation-errors { color: $color__error; }
     }
 }

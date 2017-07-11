@@ -11,8 +11,10 @@
             letter-spacing: -1px;
         }
     }
+}
 
-    .wpcf7-form {
+.wpcf7 {
+    form.wpcf7-form {
         .wpcf7-form-control-wrap {
 
             @media screen and ( min-width: 766px ) {
@@ -51,13 +53,13 @@
 
         .function-room-options {
             display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+            flex-wrap: wrap;
+            justify-content: center;
             width: 100%;
             &.hide { display: none; }
             .total-estimate {
                 display: flex;
-                    align-items: center;
+                align-items: center;
                 font-size: 125%;
                 margin: 1rem auto;
                 strong {

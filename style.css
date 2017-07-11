@@ -759,6 +759,20 @@ a {
     .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap textarea {
       height: 80px;
       resize: vertical; }
+    .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+      background-color: rgba(255, 0, 0, 0.04);
+      border-bottom: 1px solid #F44336;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      font-size: 75%;
+      padding: 0 0.25rem;
+      pointer-events: none;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      bottom: 2px;
+      left: 2px; }
   .wpcf7 form.wpcf7-form .wpcf7-checkbox {
     display: block;
     position: relative;
@@ -812,9 +826,20 @@ a {
     text-transform: uppercase;
     transition: background-color 0.25s;
     width: calc(100% - 4px);
-    width: 50%; }
+    width: 60%; }
     .wpcf7 form.wpcf7-form .wpcf7-submit:hover {
       background-color: #6639B6; }
+  .wpcf7 form.wpcf7-form .ajax-loader {
+    display: none; }
+  .wpcf7 form.wpcf7-form .wpcf7-response-output {
+    border: none !important;
+    margin: 0 auto;
+    text-align: center;
+    width: 60%; }
+  .wpcf7 form.wpcf7-form div.wpcf7-mail-sent-ok {
+    color: #00C853; }
+  .wpcf7 form.wpcf7-form div.wpcf7-validation-errors {
+    color: #F44336; }
 
 .elementor {
   margin: 0 auto; }
@@ -1378,21 +1403,22 @@ a {
     font-size: 200%;
     font-weight: 700;
     letter-spacing: -1px; }
+
 @media screen and (min-width: 766px) {
-  .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.email-address, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.phone-number, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.date-time, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.party-size, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food {
+  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.email-address, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.phone-number, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.date-time, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.party-size, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food {
     width: calc(100% / 12 * 4); }
-  .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.guest-name {
+  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.guest-name {
     width: calc(100% / 12 * 8); } }
-.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type::before {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type::before {
   content: 'Booking Type:'; }
-.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type::before {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type::before {
   content: 'Session Type:'; }
-.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food::before {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food::before {
   content: 'Food Options:'; }
-.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.total-estimate {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.total-estimate {
   text-align: center;
   width: 100%; }
-.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type::before, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type::before, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food::before {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food::before {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -1404,28 +1430,28 @@ a {
   right: 0;
   bottom: 0;
   left: 0; }
-.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type.empty select, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type.empty select, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food.empty select {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type.empty select, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type.empty select, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food.empty select {
   color: transparent; }
-.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type:not(.empty)::before, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type:not(.empty)::before, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food:not(.empty)::before {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type:not(.empty)::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type:not(.empty)::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food:not(.empty)::before {
   display: none; }
-.block-section.bookings .wpcf7-form .function-room-options {
+.wpcf7 form.wpcf7-form .function-room-options {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%; }
-  .block-section.bookings .wpcf7-form .function-room-options.hide {
+  .wpcf7 form.wpcf7-form .function-room-options.hide {
     display: none; }
-  .block-section.bookings .wpcf7-form .function-room-options .total-estimate {
+  .wpcf7 form.wpcf7-form .function-room-options .total-estimate {
     display: flex;
     align-items: center;
     font-size: 125%;
     margin: 1rem auto; }
-    .block-section.bookings .wpcf7-form .function-room-options .total-estimate strong {
+    .wpcf7 form.wpcf7-form .function-room-options .total-estimate strong {
       color: #6639B6;
       font-size: 150%;
       font-weight: 700;
       margin-left: 0.5rem; }
-      .block-section.bookings .wpcf7-form .function-room-options .total-estimate strong::after {
+      .wpcf7 form.wpcf7-form .function-room-options .total-estimate strong::after {
         content: attr(data-total); }
 
 #about .elementor {
