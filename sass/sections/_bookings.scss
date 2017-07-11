@@ -1,7 +1,8 @@
 .block-section.bookings {
 
-    a {
+    a[href*="tel:"] {
         color: $color__primary;
+        position: relative; bottom: 1.5rem;
         text-decoration: none;
 
         strong {
@@ -11,4 +12,64 @@
         }
     }
 
+    .wpcf7-form {
+        .wpcf7-form-control-wrap {
+
+            @media screen and ( min-width: 766px ) {
+                &.email-address,
+                &.phone-number,
+                &.date-time,
+                &.party-size,
+                &.booking-type,
+                &.session-type,
+                &.arrival-food { width: calc(100% / 12 * 4); }
+                &.guest-name { width: calc(100% / 12 * 8); }
+            }
+
+            &.booking-type::before { content: 'Booking Type:'; }
+            &.session-type::before { content: 'Session Type:'; }
+            &.arrival-food::before { content: 'Food Options:'; }
+            &.total-estimate { text-align: center; width: 100%; }
+
+            &.booking-type,
+            &.session-type,
+            &.arrival-food {
+                &::before {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    font-weight: 300;
+                    padding: 0.75rem;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 0; right: 0; bottom: 0; left: 0;
+                }
+                &.empty select { color: transparent; }
+                &:not(.empty)::before { display: none; }
+            }
+        }
+
+        .function-room-options {
+            display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            width: 100%;
+            &.hide { display: none; }
+            .total-estimate {
+                display: flex;
+                    align-items: center;
+                font-size: 125%;
+                margin: 1rem auto;
+                strong {
+                    color: $color__primary;
+                    font-size: 150%;
+                    font-weight: 700;
+                    margin-left: 0.5rem;
+                    &::after {
+                        content: attr(data-total);
+                    }
+                }
+            }
+        }
+    }
 }

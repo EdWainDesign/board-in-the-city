@@ -628,19 +628,52 @@ a {
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+#welcome {
+  background-color: #6639B6;
+  color: white; }
+
+#notice {
+  background-color: #ffea3a; }
+
+#notice p {
+  margin: 0.5rem auto; }
+
+#info {
+  background-color: transparent; }
+
+#games {
+  background-color: #6639B6;
+  color: white; }
+
+#events {
+  background-color: transparent; }
+
+#menu {
+  background-color: #6639B6;
+  color: white; }
+
+#bookings {
+  background-color: transparent; }
+
+#photos {
+  background-color: #6639B6;
+  color: white; }
+
+#about {
+  background-color: transparent; }
+
 .block-section {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.8);
   padding: 4rem 8%; }
+  .block-section#notice {
+    padding: 0 2%; }
   @media screen and (max-width: 900px) {
     .block-section {
       padding: 3rem 4%; } }
   @media screen and (max-width: 640px) {
     .block-section {
       padding: 2rem 2%; } }
-  .block-section:nth-of-type(odd) {
-    background-color: #6639B6;
-    color: white; }
   .block-section article h1 {
     font-size: 300%;
     font-weight: 700;
@@ -704,29 +737,13 @@ a {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -4px; }
-  .wpcf7 form.wpcf7-form [class*="col"] {
-    display: inline-block;
-    margin: 2px; }
-  .wpcf7 form.wpcf7-form .col-6, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.col-6 {
-    width: calc( (100% / 12 * 6) - 4px ); }
-  .wpcf7 form.wpcf7-form .col-12, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.col-12 {
-    width: calc( (100% / 12 * 12) - 4px ); }
-  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.private-room {
-    width: 50%; }
-    .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.private-room .wpcf7-form-control {
-      background-color: #fff;
-      color: #666;
-      font-weight: 300;
-      margin: 2px;
-      width: calc(100% - 4px); }
-  @media screen and (max-width: 768px) {
-    .wpcf7 form.wpcf7-form [class*="col"],
-    .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.private-room {
-      width: 100% !important; } }
   .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap {
     display: block;
+    padding: 2px;
+    position: relative;
     width: 100%; }
     .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap input,
+    .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap select,
     .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap textarea {
       border: none;
       border-radius: 0;
@@ -736,6 +753,9 @@ a {
       min-height: 48px;
       padding: 0.5rem;
       width: 100%; }
+    .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap select option {
+      color: #404040;
+      font-weight: 300; }
     .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap textarea {
       height: 80px;
       resize: vertical; }
@@ -778,9 +798,6 @@ a {
     .wpcf7 form.wpcf7-form .wpcf7-checkbox input:not(:checked) + .wpcf7-list-item-label::before {
       color: rgba(0, 0, 0, 0.25);
       content: '\f279'; }
-  .wpcf7 form.wpcf7-form span.wpcf7-list-item {
-    display: block;
-    margin: 0; }
   .wpcf7 form.wpcf7-form .wpcf7-submit {
     background-color: rgba(0, 0, 0, 0.9);
     border: none;
@@ -794,7 +811,8 @@ a {
     margin: 2px auto;
     text-transform: uppercase;
     transition: background-color 0.25s;
-    width: calc(100% - 4px); }
+    width: calc(100% - 4px);
+    width: 50%; }
     .wpcf7 form.wpcf7-form .wpcf7-submit:hover {
       background-color: #6639B6; }
 
@@ -1149,11 +1167,71 @@ a {
       .simcal-calendar-grid .simcal-calendar-head .simcal-nav .simcal-nav-button[disabled="disabled"],
       .simcal-calendar-list .simcal-calendar-head .simcal-nav .simcal-nav-button[disabled="disabled"] {
         opacity: 0.2; }
+  .simcal-calendar-grid .simcal-month .simcal-week .simcal-day,
+  .simcal-calendar-list .simcal-month .simcal-week .simcal-day {
+    height: 100%;
+    position: relative; }
+    .simcal-calendar-grid .simcal-month .simcal-week .simcal-day:hover,
+    .simcal-calendar-list .simcal-month .simcal-week .simcal-day:hover {
+      background-color: transparent;
+      background-color: #fff;
+      outline: 3px solid #ffea3a;
+      outline-offset: -3px; }
+    .simcal-calendar-grid .simcal-month .simcal-week .simcal-day .simcal-day-label,
+    .simcal-calendar-list .simcal-month .simcal-week .simcal-day .simcal-day-label {
+      font-size: 85%;
+      font-weight: 700; }
+    .simcal-calendar-grid .simcal-month .simcal-week .simcal-day .simcal-events,
+    .simcal-calendar-list .simcal-month .simcal-week .simcal-day .simcal-events {
+      color: #666; }
+      .simcal-calendar-grid .simcal-month .simcal-week .simcal-day .simcal-events > .simcal-event,
+      .simcal-calendar-list .simcal-month .simcal-week .simcal-day .simcal-events > .simcal-event {
+        border-bottom: none;
+        font-weight: 700; }
+        .simcal-calendar-grid .simcal-month .simcal-week .simcal-day .simcal-events > .simcal-event:hover,
+        .simcal-calendar-list .simcal-month .simcal-week .simcal-day .simcal-events > .simcal-event:hover {
+          text-decoration: none; }
+  .simcal-calendar-grid .simcal-month .simcal-week .simcal-day-void,
+  .simcal-calendar-grid .simcal-month .simcal-week .simcal-day-void:hover,
+  .simcal-calendar-list .simcal-month .simcal-week .simcal-day-void,
+  .simcal-calendar-list .simcal-month .simcal-week .simcal-day-void:hover {
+    background-color: #f1f1f1;
+    outline: none; }
+  .simcal-calendar-grid .simcal-month .simcal-week .simcal-today div,
+  .simcal-calendar-list .simcal-month .simcal-week .simcal-today div {
+    background-color: #6639B6;
+    border: none !important; }
+  .simcal-calendar-grid .simcal-month .simcal-week .simcal-today .simcal-day-label,
+  .simcal-calendar-list .simcal-month .simcal-week .simcal-today .simcal-day-label {
+    background-color: inherit !important; }
+  .simcal-calendar-grid .simcal-month .simcal-week .simcal-today .simcal-events,
+  .simcal-calendar-list .simcal-month .simcal-week .simcal-today .simcal-events {
+    color: white; }
 
 .simcal-calendar-list .simcal-calendar-head {
   padding-top: 10px; }
 .simcal-calendar-list .simcal-events-list-container {
   margin: 0; }
+
+.simcal-event-details {
+  color: #666; }
+  .simcal-event-details p {
+    margin: 0 !important; }
+  .simcal-event-details .simcal-event-title {
+    color: #6639B6;
+    font-size: 125%;
+    margin-bottom: 0; }
+  .simcal-event-details .simcal-event-date,
+  .simcal-event-details .simcal-event-start,
+  .simcal-event-details .simcal-event-end {
+    font-size: 85%;
+    opacity: 0.85; }
+  .simcal-event-details .simcal-event-address {
+    display: none; }
+  .simcal-event-details .simcal-event-description {
+    margin: 1rem 0 !important; }
+  .simcal-event-details a {
+    display: none; }
 
 .menu-social-networks-container ul.menu {
   list-style-type: none;
@@ -1291,13 +1369,64 @@ a {
   .block-section.menu .option.gluten-free {
     background-color: #FF5722; }
 
-.block-section.bookings a {
+.block-section.bookings a[href*="tel:"] {
   color: #6639B6;
+  position: relative;
+  bottom: 1.5rem;
   text-decoration: none; }
-  .block-section.bookings a strong {
+  .block-section.bookings a[href*="tel:"] strong {
     font-size: 200%;
     font-weight: 700;
     letter-spacing: -1px; }
+@media screen and (min-width: 766px) {
+  .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.email-address, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.phone-number, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.date-time, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.party-size, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food {
+    width: calc(100% / 12 * 4); }
+  .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.guest-name {
+    width: calc(100% / 12 * 8); } }
+.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type::before {
+  content: 'Booking Type:'; }
+.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type::before {
+  content: 'Session Type:'; }
+.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food::before {
+  content: 'Food Options:'; }
+.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.total-estimate {
+  text-align: center;
+  width: 100%; }
+.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type::before, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type::before, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food::before {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 300;
+  padding: 0.75rem;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type.empty select, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type.empty select, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food.empty select {
+  color: transparent; }
+.block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.booking-type:not(.empty)::before, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.session-type:not(.empty)::before, .block-section.bookings .wpcf7-form .wpcf7-form-control-wrap.arrival-food:not(.empty)::before {
+  display: none; }
+.block-section.bookings .wpcf7-form .function-room-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%; }
+  .block-section.bookings .wpcf7-form .function-room-options.hide {
+    display: none; }
+  .block-section.bookings .wpcf7-form .function-room-options .total-estimate {
+    display: flex;
+    align-items: center;
+    font-size: 125%;
+    margin: 1rem auto; }
+    .block-section.bookings .wpcf7-form .function-room-options .total-estimate strong {
+      color: #6639B6;
+      font-size: 150%;
+      font-weight: 700;
+      margin-left: 0.5rem; }
+      .block-section.bookings .wpcf7-form .function-room-options .total-estimate strong::after {
+        content: attr(data-total); }
 
 #about .elementor {
   max-width: 900px; }

@@ -135,9 +135,67 @@ jQuery(document).ready( function($) {
     });
 
     //////////////////////////////////////////
-    //  Remove <p> tags from "Contact Form 7"
+    //  Booking Form script
     //////////////////////////////////////////
 
-    $(".wpcf7-form").find("p").contents().unwrap();
+    let roomUpkeep = 1000;
+    let avgBookingsPerWeek = 2;
+    let avgCostPerBooking = roomUpkeep / (avgBookingsPerWeek * 52);
+    let markupMultiplier = 5;
+    let baseCost = Math.ceil(avgCostPerBooking) * markupMultiplier;
 
+    $('.wpcf7-form').find('p').contents().unwrap();
+    $('.wpcf7-form :input').on('change', formChange);
+    formChange();
+
+    function formChange() {
+        $('.wpcf7-form select').each((i,el) => {
+            if ( $(el).val() ) { $(el).closest('.wpcf7-form-control-wrap').removeClass('empty'); }
+            else               { $(el).closest('.wpcf7-form-control-wrap').addClass('empty'); }
+        });
+
+        if ( $('.wpcf7-form .private-room input').is(':checked') ) {
+            $('.wpcf7-form .function-room-options').removeClass('hide');
+        } else {
+            $('.wpcf7-form .function-room-options').addClass('hide');
+        }
+
+        let roomCost = baseCost;
+        let partySize = $('.party-size input').val() || 1;
+        let bookingType = $('.booking-type select').val() || null;
+        let sessionType = $('.session-type select').val() || null;
+        let arrivalFood = $('.arrival-food select').val() || null;
+
+        switch (true) {
+            case partySize >= 0 && partySize <= 5 :
+                roomCost *= 1.0; break;
+            case partySize >= 6 && partySize <= 9 :
+                roomCost *= 1.2; break;
+            case partySize >= 10 :
+                roomCost *= 1.4; break;
+        }
+
+        switch (bookingType) {
+            case 'Party':       roomCost *= 0.9; break;
+            case 'RPG Session': roomCost *= 1.0; break;
+            case 'Tournament':  roomCost *= 0.7; break;
+        }
+
+        switch (sessionType) {
+            case 'Day':     roomCost *= 0.8; break;
+            case 'Evening': roomCost *= 1.0; break;
+            case 'Both':    roomCost *= 1.5; break;
+        }
+
+        switch (arrivalFood) {
+            case 'None':             roomCost += 0; break;
+            case '1 drink':          roomCost += (partySize * 2); break;
+            case '1 drink + snacks': roomCost += (partySize * 4); break;
+            case 'Buffet':           roomCost += (partySize * 8); break;
+            case '1 drink + meal':   roomCost += (partySize * 12); break;
+        }
+
+        let total = roomCost.toFixed(2);
+        $('.total-estimate strong').text(`£${total}`);
+    }
 });

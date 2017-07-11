@@ -1,28 +1,25 @@
+#welcome { background-color: $color__primary; color: white; }
+#notice  { background-color: $color__secondary; }
+#notice p { margin: 0.5rem auto; }
+#info    { background-color: transparent; }
+#games   { background-color: $color__primary; color: white; }
+#events  { background-color: transparent; }
+#menu    { background-color: $color__primary; color: white; }
+#bookings{ background-color: transparent; }
+#photos  { background-color: $color__primary; color: white; }
+#about   { background-color: transparent; }
+
 .block-section {
     background-color: transparent;
     color: rgba(0,0,0,0.8);
     padding: 4rem 8%;
+    &#notice { padding: 0 2%; }
     @media screen and ( max-width: 900px ) {
         padding: 3rem 4%;
     }
     @media screen and ( max-width: 640px ) {
         padding: 2rem 2%;
     }
-
-    &:nth-of-type(odd) {
-        background-color: $color__primary;
-        color: white;
-    }
-    // &:nth-of-type(2),
-    // &:nth-of-type(5) {
-    //     background-color: transparent;
-    //     color: rgba(0,0,0,0.8);
-    // }
-    // &:nth-of-type(4),
-    // &:nth-of-type(6) {
-    //     background-color: $color__secondary;
-    //     color: rgba(0,0,0,0.8);
-    // }
 
     article {
         h1 {

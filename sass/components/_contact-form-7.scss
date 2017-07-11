@@ -4,34 +4,14 @@
         flex-wrap: wrap;
         margin: 0 -4px;
 
-        [class*="col"] {
-            display: inline-block;
-            margin: 2px;
-        }
-        .col-6,  .wpcf7-form-control-wrap.col-6  { width: calc( (100% / 12 * 6) - 4px ); }
-        .col-12, .wpcf7-form-control-wrap.col-12 { width: calc( (100% / 12 * 12) - 4px ); }
-        .wpcf7-form-control-wrap.private-room { width: 50%;
-            .wpcf7-form-control {
-                background-color: $color__background-body;
-                color: #666;
-                font-weight: 300;
-                margin: 2px;
-                width: calc(100% - 4px);
-            }
-        }
-
-        @media screen and ( max-width:768px ) {
-            [class*="col"],
-            .wpcf7-form-control-wrap.private-room {
-                width: 100%!important;
-            }
-        }
-
         .wpcf7-form-control-wrap {
             display: block;
+            padding: 2px;
+            position: relative;
             width: 100%;
 
             input,
+            select,
             textarea {
                 border: none;
                 border-radius: 0;
@@ -41,6 +21,11 @@
                 min-height: 48px;
                 padding: 0.5rem;
                 width: 100%;
+            }
+
+            select option {
+                color: $color__text-main;
+                font-weight: 300;
             }
 
             textarea {
@@ -95,11 +80,6 @@
             }
         }
 
-        span.wpcf7-list-item {
-            display: block;
-            margin: 0;
-        }
-
         .wpcf7-submit {
             background-color: rgba(0,0,0,0.9);
             border: none;
@@ -114,6 +94,7 @@
             text-transform: uppercase;
             transition: background-color 0.25s;
             width: calc(100% - 4px);
+            width: 50%;
             &:hover { background-color: $color__primary; }
         }
     }

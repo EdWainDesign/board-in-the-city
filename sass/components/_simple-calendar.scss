@@ -19,60 +19,49 @@
 
     .simcal-month {
         .simcal-week {
+            .simcal-day {
+                height: 100%;
+                position: relative;
+                &:hover {
+                    background-color: transparent;
+                    background-color: $color__background-body;
+                    outline: 3px solid $color__secondary;
+                    outline-offset: -3px;
+                }
 
-//             td div {
-//                 background-color: $color__background-body;
-//                 border: none!important;
-//             }
-//
-//             .simcal-day {
-//                 background-color: $color__background-body;
-//                 height: 100%;
-//                 overflow: auto;
-//                 position: relative;
-//                 &:hover {
-//                     background-color: $color__background-body;
-//                     outline: 2px solid $color__secondary;
-//                     outline-offset: -2px;
-//                     .simcal-day-label { color: $color__secondary!important; }
-//                 }
-//                 div {
-//                     background-color: inherit;
-//                     color: inherit;
-//                 }
-//
-//                 .simcal-day-label {
-//                     background-color: inherit!important;
-//                     color: rgba(0,0,0,0.25)!important;
-//                     font-weight: 700;
-//                     letter-spacing: -1px;
-//                     background-color: transparent;
-//                     padding: 0.5rem 0 0;
-//                 }
-//
-//                 .simcal-events {
-//                     color: $color__text-input;
-//                     text-align: center;
-//                     &> .simcal-event {
-//                         border-bottom: none;
-//                         font-weight: 700;
-//                         &:hover { color: $color__primary; text-decoration: none; }
-//                     }
-//                 }
-//             }
-//
-//             .simcal-day-void,
-//             .simcal-day-void:hover {
-//                 background-color: transparent;
-//                 outline: none;
-//             }
-//
-//             .simcal-today {
-//                 div { background-color: $color__primary; }
-//                 .simcal-events {
-//                     color: white;
-//                 }
-//             }
+                .simcal-day-label {
+                    font-size: 85%;
+                    font-weight: 700;
+                }
+
+                .simcal-events {
+                    color: $color__text-input;
+                    &> .simcal-event {
+                        border-bottom: none;
+                        font-weight: 700;
+                        &:hover { text-decoration: none; }
+                    }
+                }
+            }
+
+            .simcal-day-void,
+            .simcal-day-void:hover {
+                background-color: $color__background-screen;
+                outline: none;
+            }
+
+            .simcal-today {
+                div {
+                    background-color: $color__primary;
+                    border: none!important;
+                }
+                .simcal-day-label {
+                    background-color: inherit!important;
+                }
+                .simcal-events {
+                    color: white;
+                }
+            }
         }
     }
 }
@@ -94,34 +83,21 @@
 //  EVENT BUBBLE
 //////////////////////////////////////////
 
-// .simcal-event-bubble {
-//     .qtip-content {
-//         .simcal-event-details {
-//             color: $color__text-input;
-//             p { margin: 0; }
-//             p:last-of-type { text-align: center; }
-//             .simcal-event-title {
-//                 color: $color__primary;
-//                 font-size: 125%;
-//                 margin-bottom: 0;
-//             }
-//             .simcal-event-date,
-//             .simcal-event-start,
-//             .simcal-event-end {
-//                 font-size: 85%;
-//                 opacity: 0.85;
-//             }
-//             .simcal-event-address { display: none; }
-//             .simcal-event-description { margin: 1rem 0 0.5rem; }
-//             a {
-//                 background-color: $color__primary;
-//                 color: white;
-//                 display: inline-block;
-//                 display: none;
-//                 margin: 0 auto;
-//                 padding: 0.25rem 0.5rem;
-//                 text-decoration: none;
-//             }
-//         }
-//     }
-// }
+.simcal-event-details {
+    color: $color__text-input;
+    p { margin: 0!important; }
+    .simcal-event-title {
+        color: $color__primary;
+        font-size: 125%;
+        margin-bottom: 0;
+    }
+    .simcal-event-date,
+    .simcal-event-start,
+    .simcal-event-end {
+        font-size: 85%;
+        opacity: 0.85;
+    }
+    .simcal-event-address { display: none; }
+    .simcal-event-description { margin: 1rem 0!important; }
+    a { display: none; }
+}
