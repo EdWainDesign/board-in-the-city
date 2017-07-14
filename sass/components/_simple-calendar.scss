@@ -85,7 +85,7 @@
 
 .simcal-event-details {
     color: $color__text-input;
-    p { margin: 0!important; }
+    &> p { margin: 0!important; }
     .simcal-event-title {
         color: $color__primary;
         font-size: 125%;
@@ -98,6 +98,9 @@
         opacity: 0.85;
     }
     .simcal-event-address { display: none; }
-    .simcal-event-description { margin: 1rem 0!important; }
+    .simcal-event-description {
+        margin: 1rem 0!important;
+        p { margin: 0.5rem 0; }
+    }
     a { display: none; }
 }

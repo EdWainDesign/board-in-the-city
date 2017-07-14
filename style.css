@@ -860,6 +860,19 @@ a {
   color: #ffea3a;
   font-size: 0.75rem; }
 
+.elementor-widget-accordion .elementor-accordion .elementor-accordion-item {
+  border: none; }
+  .elementor-widget-accordion .elementor-accordion .elementor-accordion-item .elementor-accordion-title {
+    color: #ffea3a;
+    font-size: 150%;
+    letter-spacing: -2px;
+    text-transform: uppercase; }
+    .elementor-widget-accordion .elementor-accordion .elementor-accordion-item .elementor-accordion-title:hover {
+      background-color: rgba(255, 255, 255, 0.08); }
+  .elementor-widget-accordion .elementor-accordion .elementor-accordion-item .elementor-accordion-content {
+    border: none;
+    padding: 0; }
+
 #game_finder {
   display: flex;
   align-items: stretch;
@@ -1240,7 +1253,7 @@ a {
 
 .simcal-event-details {
   color: #666; }
-  .simcal-event-details p {
+  .simcal-event-details > p {
     margin: 0 !important; }
   .simcal-event-details .simcal-event-title {
     color: #6639B6;
@@ -1255,6 +1268,8 @@ a {
     display: none; }
   .simcal-event-details .simcal-event-description {
     margin: 1rem 0 !important; }
+    .simcal-event-details .simcal-event-description p {
+      margin: 0.5rem 0; }
   .simcal-event-details a {
     display: none; }
 
@@ -1339,43 +1354,64 @@ a {
     #info .elementor-row:first-of-type .elementor-column.elementor-col-33, #info .elementor-row:first-of-type .elementor-column[data-col="33"] {
       min-width: 340px; } }
 
-.block-section.menu h2 {
+#menu h2 {
   display: inline-block; }
-.block-section.menu h2 + p {
+#menu h2 + p {
   display: inline-block;
   margin-left: 0.5rem;
   opacity: 0.5; }
-.block-section.menu .elementor-row {
+#menu .elementor-widget-accordion {
+  margin: 0 auto;
+  max-width: 640px; }
+  #menu .elementor-widget-accordion p {
+    margin: 0; }
+#menu .elementor-row {
   flex-wrap: nowrap; }
-  .block-section.menu .elementor-row .elementor-column:first-of-type {
+  #menu .elementor-row .elementor-column:first-of-type {
     margin-right: 1rem; }
-  .block-section.menu .elementor-row .elementor-column:last-of-type {
+  #menu .elementor-row .elementor-column:last-of-type {
     margin-left: 1rem; }
   @media screen and (max-width: 768px) {
-    .block-section.menu .elementor-row {
+    #menu .elementor-row {
       flex-wrap: wrap; }
-      .block-section.menu .elementor-row .elementor-column {
+      #menu .elementor-row .elementor-column {
         margin: 0 !important;
         width: 100%; } }
-.block-section.menu .tablepress.menu thead tr th:first-of-type {
-  color: #ffea3a;
-  font-size: 150%;
-  letter-spacing: -2px;
-  text-transform: uppercase; }
-.block-section.menu .tablepress.menu thead tr th:last-of-type {
-  color: rgba(255, 255, 255, 0.75);
-  font-weight: 300;
-  min-width: 100px;
-  text-align: right; }
-.block-section.menu .tablepress.menu tbody td {
-  border-top: none; }
-.block-section.menu .tablepress.menu tbody tr td:first-of-type {
-  width: 70%; }
-.block-section.menu .tablepress.menu tbody tr td:last-of-type {
-  color: #ffea3a;
-  font-weight: 700;
-  text-align: right; }
-.block-section.menu .option {
+#menu .tablepress.menu {
+  margin: 0; }
+  #menu .tablepress.menu thead tr th:first-of-type {
+    color: #ffea3a;
+    font-size: 150%;
+    letter-spacing: -2px;
+    text-transform: uppercase; }
+  #menu .tablepress.menu thead tr th:last-of-type {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 300;
+    min-width: 100px;
+    text-align: right; }
+  #menu .tablepress.menu tbody tr td {
+    border-top: none; }
+  #menu .tablepress.menu tbody tr td[colspan] {
+    color: #ffea3a;
+    font-weight: 500; }
+  #menu .tablepress.menu tbody tr td:first-of-type {
+    padding-left: 1rem;
+    width: 100%; }
+    #menu .tablepress.menu tbody tr td:first-of-type.indent {
+      color: #ffea3a;
+      padding-left: 3rem; }
+      #menu .tablepress.menu tbody tr td:first-of-type.indent[colspan] {
+        padding-right: 3rem; }
+  #menu .tablepress.menu tbody tr td:last-of-type:not(:first-of-type) {
+    color: #ffea3a;
+    font-size: 125%;
+    font-weight: 700;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    text-align: right;
+    white-space: nowrap;
+    width: 1px; }
+#menu .option {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   color: white;
@@ -1386,12 +1422,14 @@ a {
   font-weight: 700;
   height: 20px;
   min-width: 20px;
-  padding: 0 4px; }
-  .block-section.menu .option.vegetarian {
+  padding: 0 6px; }
+  #menu .option.vegetarian {
     background-color: #00C853; }
-  .block-section.menu .option.vegan {
+  #menu .option.vegan {
     background-color: #0091EA; }
-  .block-section.menu .option.gluten-free {
+  #menu .option.gluten-free {
+    background-color: #FFC107; }
+  #menu .option.dairy-free {
     background-color: #FF5722; }
 
 .block-section.bookings a[href*="tel:"] {

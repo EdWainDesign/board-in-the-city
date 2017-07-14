@@ -1,4 +1,4 @@
-.block-section.menu {
+#menu {
 
     h2 {
         display: inline-block;
@@ -8,6 +8,12 @@
         display: inline-block;
         margin-left: 0.5rem;
         opacity: 0.5;
+    }
+
+    .elementor-widget-accordion {
+        margin: 0 auto;
+        max-width: 640px;
+        p { margin: 0; }
     }
 
     .elementor-row {
@@ -24,6 +30,7 @@
     }
 
     .tablepress.menu {
+        margin: 0;
 
         thead tr {
             th:first-of-type {
@@ -41,18 +48,37 @@
             }
         }
 
-        tbody td {
+        tbody tr td {
             border-top: none;
         }
 
-        tbody tr td:first-of-type {
-            width: 70%;
+        tbody tr td[colspan] {
+            // color: rgba(0,0,0,0.5);
+            color: $color__secondary;
+            font-weight: 500;
         }
 
-        tbody tr td:last-of-type {
+        tbody tr td:first-of-type {
+            padding-left: 1rem;
+            width: 100%;
+            &.indent {
+                color: $color__secondary;
+                padding-left: 3rem;
+                &[colspan] {
+                    padding-right: 3rem;
+                }
+            }
+        }
+
+        tbody tr td:last-of-type:not(:first-of-type) {
             color: $color__secondary;
+            font-size: 125%;
             font-weight: 700;
+            padding-left: 2rem;
+            padding-right: 1rem;
             text-align: right;
+            white-space: nowrap;
+            width: 1px;
         }
     }
 
@@ -67,10 +93,11 @@
         font-weight: 700;
         height: 20px;
         min-width: 20px;
-        padding: 0 4px;
+        padding: 0 6px;
 
         &.vegetarian  { background-color: #00C853; }
         &.vegan       { background-color: #0091EA; }
-        &.gluten-free { background-color: #FF5722; }
+        &.gluten-free { background-color: #FFC107; }
+        &.dairy-free  { background-color: #FF5722; }
     }
 }

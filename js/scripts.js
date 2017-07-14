@@ -47,14 +47,23 @@ jQuery(document).ready( function($) {
     //////////////////////////////////////////
 
     function format(i,el) {
-        let text = $(el).text().replace(/\[/g, '<span class="option">').replace(/\]/g, '</span>');
-        $(el).html(text);
+
+
+        let text = $(el).text();
+        let indent = text.substr(0,1) == '>';
+        let newText = $(el).text().replace('> ', '').replace(/\[/g, '<span class="option">').replace(/\]/g, '</span>');
+        $(el).html(newText);
+
+        // if ( indent ) { $(el).css('padding-left', '2rem'); }
+        if ( indent ) { $(el).addClass('indent'); }
 
         $('.option').each((i,opt) => {
             let option = $(opt).text();
             switch ( true ) {
-                case option.indexOf('Vgn') > -1:
+                case option.indexOf('V+') > -1:
                     $(opt).addClass('vegan'); break;
+                case option.indexOf('DF') > -1:
+                    $(opt).addClass('dairy-free'); break;
                 case option.indexOf('GF') > -1:
                     $(opt).addClass('gluten-free'); break;
                 case option.indexOf('V') > -1:
