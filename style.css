@@ -737,6 +737,8 @@ a {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -4px; }
+  .wpcf7 form.wpcf7-form .hide {
+    display: none !important; }
   .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap {
     display: block;
     padding: 2px;
@@ -1225,7 +1227,8 @@ a {
       .simcal-calendar-grid .simcal-month .simcal-week .simcal-day .simcal-events > .simcal-event,
       .simcal-calendar-list .simcal-month .simcal-week .simcal-day .simcal-events > .simcal-event {
         border-bottom: none;
-        font-weight: 700; }
+        font-weight: 700;
+        word-wrap: break-word; }
         .simcal-calendar-grid .simcal-month .simcal-week .simcal-day .simcal-events > .simcal-event:hover,
         .simcal-calendar-list .simcal-month .simcal-week .simcal-day .simcal-events > .simcal-event:hover {
           text-decoration: none; }
@@ -1441,12 +1444,23 @@ a {
     font-size: 200%;
     font-weight: 700;
     letter-spacing: -1px; }
+.block-section.bookings .gallery {
+  display: flex;
+  margin: 0 -2rem; }
+  .block-section.bookings .gallery .gallery-item {
+    margin: 1rem 2rem; }
+  @media screen and (max-width: 766px) {
+    .block-section.bookings .gallery {
+      flex-wrap: wrap;
+      margin: 0; }
+      .block-section.bookings .gallery .gallery-item {
+        margin: 1rem 0; } }
 
 @media screen and (min-width: 766px) {
-  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.email-address, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.phone-number, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.date-time, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.party-size, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food {
-    width: calc(100% / 12 * 4); }
-  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.guest-name {
-    width: calc(100% / 12 * 8); } }
+  .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.guest-name, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.email-address, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.phone-number, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.date-time, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.party-size, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.table-pref, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food {
+    width: calc(100% / 12 * 4); } }
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.table-pref::before {
+  content: 'Preferred Table:'; }
 .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type::before {
   content: 'Booking Type:'; }
 .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type::before {
@@ -1456,7 +1470,7 @@ a {
 .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.total-estimate {
   text-align: center;
   width: 100%; }
-.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food::before {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.table-pref::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food::before {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -1468,9 +1482,9 @@ a {
   right: 0;
   bottom: 0;
   left: 0; }
-.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type.empty select, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type.empty select, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food.empty select {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.table-pref.empty select, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type.empty select, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type.empty select, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food.empty select {
   color: transparent; }
-.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type:not(.empty)::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type:not(.empty)::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food:not(.empty)::before {
+.wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.table-pref:not(.empty)::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.booking-type:not(.empty)::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.session-type:not(.empty)::before, .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap.arrival-food:not(.empty)::before {
   display: none; }
 .wpcf7 form.wpcf7-form .function-room-options {
   display: flex;

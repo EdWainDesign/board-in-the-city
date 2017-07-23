@@ -39,6 +39,7 @@
                     &> .simcal-event {
                         border-bottom: none;
                         font-weight: 700;
+                        word-wrap: break-word;
                         &:hover { text-decoration: none; }
                     }
                 }

@@ -11,6 +11,17 @@
             letter-spacing: -1px;
         }
     }
+
+    .gallery {
+        display: flex;
+        margin: 0 -2rem;
+        .gallery-item { margin: 1rem 2rem; }
+        @media screen and ( max-width: 766px ) {
+            flex-wrap: wrap;
+            margin: 0;
+            .gallery-item { margin: 1rem 0; }
+        }
+    }
 }
 
 .wpcf7 {
@@ -18,21 +29,25 @@
         .wpcf7-form-control-wrap {
 
             @media screen and ( min-width: 766px ) {
+                &.guest-name,
                 &.email-address,
                 &.phone-number,
                 &.date-time,
                 &.party-size,
+                &.table-pref,
                 &.booking-type,
                 &.session-type,
                 &.arrival-food { width: calc(100% / 12 * 4); }
-                &.guest-name { width: calc(100% / 12 * 8); }
+                // &.guest-name { width: calc(100% / 12 * 8); }
             }
 
+            &.table-pref::before   { content: 'Preferred Table:'; }
             &.booking-type::before { content: 'Booking Type:'; }
             &.session-type::before { content: 'Session Type:'; }
             &.arrival-food::before { content: 'Food Options:'; }
             &.total-estimate { text-align: center; width: 100%; }
 
+            &.table-pref,
             &.booking-type,
             &.session-type,
             &.arrival-food {

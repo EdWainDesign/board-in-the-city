@@ -144,11 +144,15 @@ jQuery(document).ready( function($) {
     //  Booking Form script
     //////////////////////////////////////////
 
+    // TODO : Allow table selection. Diagram of rooms, with <select> for table selection.
+    // TODO : Book a DM @ £8/hr. Day = 6hrs. Night = 6hrs. All day = 12hrs.
+
     let roomUpkeep = 1000;
     let avgBookingsPerWeek = 2;
     let avgCostPerBooking = roomUpkeep / (avgBookingsPerWeek * 52);
     let markupMultiplier = 5;
     let baseCost = Math.ceil(avgCostPerBooking) * markupMultiplier;
+    let dmCostPerHour = 8;
 
     $('.wpcf7-form').find('p').contents().unwrap();
     $('.wpcf7-form :input').on('change', formChange);
@@ -166,11 +170,18 @@ jQuery(document).ready( function($) {
             $('.wpcf7-form .function-room-options').addClass('hide');
         }
 
-        let roomCost = baseCost;
-        let partySize = $('.party-size input').val() || 1;
+        let roomCost    = baseCost;
+        let partySize   = $('.party-size input').val() || 1;
         let bookingType = $('.booking-type select').val() || null;
         let sessionType = $('.session-type select').val() || null;
         let arrivalFood = $('.arrival-food select').val() || null;
+        let bookDM      = $('.wpcf7-form .dm-required input').is(':checked');
+
+        if ( bookingType === 'RPG Session' ) {
+            $('.wpcf7-form .dm-required').removeClass('hide');
+        } else {
+            $('.wpcf7-form .dm-required').addClass('hide');
+        }
 
         switch (true) {
             case partySize >= 0 && partySize <= 5 :
@@ -188,9 +199,9 @@ jQuery(document).ready( function($) {
         }
 
         switch (sessionType) {
-            case 'Day':     roomCost *= 0.8; break;
-            case 'Evening': roomCost *= 1.0; break;
-            case 'Both':    roomCost *= 1.5; break;
+            case 'Day (6hrs)':      roomCost *= 0.8; break;
+            case 'Evening (6hrs)':  roomCost *= 1.0; break;
+            case 'All Day (12hrs)': roomCost *= 1.5; break;
         }
 
         switch (arrivalFood) {
@@ -199,6 +210,11 @@ jQuery(document).ready( function($) {
             case '1 drink + snacks': roomCost += (partySize * 4); break;
             case 'Buffet':           roomCost += (partySize * 8); break;
             case '1 drink + meal':   roomCost += (partySize * 12); break;
+        }
+
+        if ( bookDM ) {
+            let numOfHours = sessionType === 'Both' ? 12 : 6;
+            roomCost += dmCostPerHour * numOfHours;
         }
 
         let total = roomCost.toFixed(2);
