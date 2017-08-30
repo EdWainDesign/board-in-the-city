@@ -212,7 +212,7 @@ jQuery(document).ready( function($) {
             case '1 drink + meal':   roomCost += (partySize * 12); break;
         }
 
-        if ( bookDM ) {
+        if ( bookingType === 'RPG Session' && bookDM ) {
             let numOfHours = sessionType === 'Both' ? 12 : 6;
             roomCost += dmCostPerHour * numOfHours;
         }
